@@ -84,8 +84,8 @@ RL out out_ 'xrl' m=1
   let thd = root_sum_mag_square / fourier11[1][1] * 100
   print thd
 
-  echo "num,corner,vdd,temp,thd"       >  ./meas/tb_lpopamp_buf_tran_sine_cc.meas13
-  echo "13,ss,5.5,85,$&thd" >> ./meas/tb_lpopamp_buf_tran_sine_cc.meas13
+  echo "num,corner,vdd,temp,thd"       >  ./meas/tb_lpopamp_buf_tran_sine_sch.meas13
+  echo "13,ss,5.5,85,$&thd" >> ./meas/tb_lpopamp_buf_tran_sine_sch.meas13
 
   wrdata ./data/tb_lpopamp_buf_tran_sine_sch.dat13 tran1.v(in) tran1.v(out)
 

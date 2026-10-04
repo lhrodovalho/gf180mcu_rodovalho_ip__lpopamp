@@ -6,7 +6,7 @@ Warning: m=xx on .subckt line will override multiplier m hierarchy!
 
 Circuit: * num: 4 corner: fs vdd: 3 temp: -40
 
-Option cshunt: 1203 capacitors added with 1e-15 F each
+Option cshunt: 1383 capacitors added with 1e-15 F each
 Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
@@ -16,8 +16,8 @@ Note: Dynamic gmin stepping completed
 No. of Data Rows : 91
 
 No. of Data Rows : 1
-onoise_10k = 1.756822e-08
-onoise_total = 7.509582e-05
+onoise_10k = 3.195220e-08
+onoise_total = 7.477386e-05
 
 Warning: command 'plot' is not available during batch simulation, ignored!
     You may use Gnuplot instead.
@@ -27,17 +27,17 @@ Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
 
-Total analysis time (seconds) = 1.82634
+Total analysis time (seconds) = 3.68949
 
-Total elapsed time (seconds) = 2.368 
+Total elapsed time (seconds) = 4.242 
 
 Total DRAM available = 19163.062 MB.
-DRAM currently available = 4330.547 MB.
-Maximum ngspice program size =   80.766 MB.
-Current ngspice program size =   62.941 MB.
+DRAM currently available = 1720.012 MB.
+Maximum ngspice program size =   88.188 MB.
+Current ngspice program size =   69.883 MB.
 
-Shared ngspice pages =   12.086 MB.
+Shared ngspice pages =   11.887 MB.
 Text (code) pages =    6.406 MB.
 Stack = 0 bytes.
-Library pages =   60.559 MB.
+Library pages =   67.980 MB.
 

@@ -60,7 +60,7 @@ RL out out_ 'xrl' m=1
 .option method=Gear
 .param xtstart = 0
 .param xtend   = {xper}
-.param xtstep  = 1e-9
+.param xtstep  = {xper/1000}
 .tran {xtstep} {xtend} {xtstart}
 
 .save v(in) v(out)

@@ -35,13 +35,13 @@ Note: Starting dynamic gmin stepping
 Note: Dynamic gmin stepping completed
 
 No. of Data Rows : 111
-av0p1hz             =  1.140623e+02
-gbw                 =  1.936619e+06
-pm180               =  9.154190e+07
-pm                  =  4.900643e+01
-gm                  =  -6.667212e+01
-cmrr0p1hz           =  1.445672e+02
-psrr0p1hz           =  1.212268e+02
+av0p1hz             =  1.123797e+02
+gbw                 =  1.641697e+06
+pm180               =  1.057633e+08
+pm                  =  5.422273e+01
+gm                  =  -7.131028e+01
+cmrr0p1hz           =  1.435199e+02
+psrr0p1hz           =  1.194945e+02
 
 Warning: command 'plot' is not available during batch simulation, ignored!
     You may use Gnuplot instead.
@@ -50,25 +50,25 @@ Warning: command 'plot' is not available during batch simulation, ignored!
 Warning: command 'plot' is not available during batch simulation, ignored!
     You may use Gnuplot instead.
 
-idd = -1.98355e-04
-vos = 1.615193e-06
+idd = -1.98313e-04
+vos = 1.959953e-06
 binary raw file "./out/sp4.raw"
 Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
 OP information in rawfile.
 
-Total analysis time (seconds) = 15.5772
+Total analysis time (seconds) = 33.3498
 
-Total elapsed time (seconds) = 15.991 
+Total elapsed time (seconds) = 33.985 
 
 Total DRAM available = 19163.062 MB.
-DRAM currently available = 3780.871 MB.
-Maximum ngspice program size =   89.418 MB.
-Current ngspice program size =   73.039 MB.
+DRAM currently available = 2430.070 MB.
+Maximum ngspice program size =   89.473 MB.
+Current ngspice program size =   73.145 MB.
 
-Shared ngspice pages =   11.996 MB.
+Shared ngspice pages =   12.047 MB.
 Text (code) pages =    6.406 MB.
 Stack = 0 bytes.
-Library pages =   69.211 MB.
+Library pages =   69.266 MB.
 

@@ -452,9 +452,9 @@ C {devices/lab_pin.sym} 320 -300 2 0 {name=l12 sig_type=std_logic lab=bpb}
 C {devices/lab_pin.sym} 460 -540 2 0 {name=l13 sig_type=std_logic lab=bpa}
 C {devices/lab_pin.sym} 200 -640 2 1 {name=lavdd1 sig_type=std_logic lab=avdd}
 C {devices/lab_pin.sym} 200 -720 2 1 {name=lavss0 sig_type=std_logic lab=avss}
-C {p0.sym} 660 -480 0 0 {name=x10b[15:0]}
+C {p4_1.sym} 660 -480 0 0 {name=x10b[1:0]}
 C {p1_4.sym} 820 -600 0 0 {name=x11a[1:0]}
-C {p0.sym} 860 -480 0 1 {name=x11b[15:0]}
+C {p4_1.sym} 860 -480 0 1 {name=x11b[1:0]}
 C {n3_1.sym} 1420 -320 0 1 {name=x13c[1:0]}
 C {n1_4.sym} 1420 -160 0 1 {name=x3d[3:0]}
 C {n1_4.sym} 1700 -160 0 0 {name=x14f[3:0]}
@@ -568,9 +568,9 @@ C {devices/lab_pin.sym} 2780 -940 2 1 {name=l39 sig_type=std_logic lab=zpm
 }
 C {devices/lab_pin.sym} 2780 -980 2 1 {name=lavdd9 sig_type=std_logic lab=avdd}
 C {devices/lab_pin.sym} 2780 -380 2 1 {name=lavss2 sig_type=std_logic lab=avss}
-C {p0.sym} 660 -1080 0 0 {name=x12[15:0]}
+C {p4_1.sym} 660 -1080 0 0 {name=x12[1:0]}
 C {p1_4.sym} 820 -1200 0 0 {name=x16[1:0]}
-C {p0.sym} 860 -1080 0 1 {name=x18[15:0]}
+C {p4_1.sym} 860 -1080 0 1 {name=x18[1:0]}
 C {p1_4.sym} 660 -1200 0 0 {name=x22[1:0]}
 C {devices/lab_pin.sym} 620 -1200 2 1 {name=l3 sig_type=std_logic lab=bpa}
 C {devices/lab_pin.sym} 780 -1200 2 1 {name=l17 sig_type=std_logic lab=bpa}

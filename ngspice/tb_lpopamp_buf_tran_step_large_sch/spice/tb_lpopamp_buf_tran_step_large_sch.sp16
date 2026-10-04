@@ -1,4 +1,4 @@
-* num: 16 corner: fs vdd: 6 temp: 85
+* num: 16 corner: fs vdd: 5.5 temp: 85
 
 * Include models
 .include $PDK_ROOT/$PDK/libs.tech/ngspice/design.ngspice
@@ -15,7 +15,7 @@
 .include ../../netlists/lpopamp.sch.spice
 
 * Simulation parameters
-.param xavdd  = 6
+.param xavdd  = 5.5
 .param xavss  = 0
 .param xen    = 1
 .param xvin   = {xavdd/2}
@@ -86,7 +86,7 @@ RL out out_ 'xrl' m=1
   print slewrp slewrm slewr
 
   echo "num,corner,vdd,temp,slewrp,slewrm,slewr"           >  ../meas/tb_lpopamp_buf_tran_step_large_cc.meas16
-  echo "16,fs,6,85,$&slewrp,$&slewrm,$&slewr" >> ../meas/tb_lpopamp_buf_tran_step_large_cc.meas16
+  echo "16,fs,5.5,85,$&slewrp,$&slewrm,$&slewr" >> ../meas/tb_lpopamp_buf_tran_step_large_cc.meas16
 
   wrdata ../data/tb_lpopamp_buf_tran_step_large_sch.dat16 v(in) v(out)
 

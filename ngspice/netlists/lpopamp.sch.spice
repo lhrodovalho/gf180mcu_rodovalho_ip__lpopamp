@@ -1,5 +1,7 @@
+* expanding   symbol:  lpopamp_ref.sym # of pins=9
+** sym_path: /home/rodovalho/git/gf180mcu_rodovalho_ip__lpopamp/xschem/lpopamp_ref.sym
 ** sch_path: /home/rodovalho/git/gf180mcu_rodovalho_ip__lpopamp/xschem/lpopamp_ref.sch
-.subckt lpopamp im  ip  o  avdd  avss  vsub  en  enb  ibias
+.subckt lpopamp im ip o avdd avss vsub en enb ibias
 *.iopin avdd
 *.iopin avss
 *.iopin ip
@@ -12,13 +14,14 @@
 xslice[3] im ip o avdd avss en enb bpa bpb bnb zpp zpm zn znp znm lpopamp_slice
 xslice[2] im ip o avdd avss en enb bpa bpb bnb zpp zpm zn znp znm lpopamp_slice
 xslice[1] im ip o avdd avss en enb bpa bpb bnb zpp zpm zn znp znm lpopamp_slice
-xslice    im ip o avdd avss en enb bpa bpb bnb zpp zpm zn znp znm lpopamp_slice
+xslice[0] im ip o avdd avss en enb bpa bpb bnb zpp zpm zn znp znm lpopamp_slice
 ralias_ibias ibias bnb 1 m=1
 C1 o zpm 3p m=1
 C2 o znm 3p m=1
 C3 avdd zpp 3p m=1
 C4 avss znp 3p m=1
 .ends
+
 
 * expanding   symbol:  lpopamp_slice.sym # of pins=16
 ** sym_path: /home/rodovalho/git/gf180mcu_rodovalho_ip__lpopamp/xschem/lpopamp_slice.sym
@@ -48,40 +51,12 @@ x02b[1] bpb bpb bpa_[1] avdd p8_1
 x02b[0] bpb bpb bpa_[0] avdd p8_1
 x02a[1] bpa_[1] bpa avdd avdd p1_4
 x02a[0] bpa_[0] bpa avdd avdd p1_4
-x10b[15] ynp im xp avdd p0
-x10b[14] ynp im xp avdd p0
-x10b[13] ynp im xp avdd p0
-x10b[12] ynp im xp avdd p0
-x10b[11] ynp im xp avdd p0
-x10b[10] ynp im xp avdd p0
-x10b[9] ynp im xp avdd p0
-x10b[8] ynp im xp avdd p0
-x10b[7] ynp im xp avdd p0
-x10b[6] ynp im xp avdd p0
-x10b[5] ynp im xp avdd p0
-x10b[4] ynp im xp avdd p0
-x10b[3] ynp im xp avdd p0
-x10b[2] ynp im xp avdd p0
-x10b[1] ynp im xp avdd p0
-x10b[0] ynp im xp avdd p0
+x10b[1] ynp im xp avdd p4_1
+x10b[0] ynp im xp avdd p4_1
 x11a[1] xp bpa avdd avdd p1_4
 x11a[0] xp bpa avdd avdd p1_4
-x11b[15] ynm ip xp avdd p0
-x11b[14] ynm ip xp avdd p0
-x11b[13] ynm ip xp avdd p0
-x11b[12] ynm ip xp avdd p0
-x11b[11] ynm ip xp avdd p0
-x11b[10] ynm ip xp avdd p0
-x11b[9] ynm ip xp avdd p0
-x11b[8] ynm ip xp avdd p0
-x11b[7] ynm ip xp avdd p0
-x11b[6] ynm ip xp avdd p0
-x11b[5] ynm ip xp avdd p0
-x11b[4] ynm ip xp avdd p0
-x11b[3] ynm ip xp avdd p0
-x11b[2] ynm ip xp avdd p0
-x11b[1] ynm ip xp avdd p0
-x11b[0] ynm ip xp avdd p0
+x11b[1] ynm ip xp avdd p4_1
+x11b[0] ynm ip xp avdd p4_1
 x13c[1] znp zn ynp avss n3_1
 x13c[0] znp zn ynp avss n3_1
 x3d[3] ynp zn avss avss n1_4
@@ -172,40 +147,12 @@ x2[1] kn enb avss avss n0
 x2[0] kn enb avss avss n0
 x10[1] kp en avdd avdd p0
 x10[0] kp en avdd avdd p0
-x12[15] yn im xp0 avdd p0
-x12[14] yn im xp0 avdd p0
-x12[13] yn im xp0 avdd p0
-x12[12] yn im xp0 avdd p0
-x12[11] yn im xp0 avdd p0
-x12[10] yn im xp0 avdd p0
-x12[9] yn im xp0 avdd p0
-x12[8] yn im xp0 avdd p0
-x12[7] yn im xp0 avdd p0
-x12[6] yn im xp0 avdd p0
-x12[5] yn im xp0 avdd p0
-x12[4] yn im xp0 avdd p0
-x12[3] yn im xp0 avdd p0
-x12[2] yn im xp0 avdd p0
-x12[1] yn im xp0 avdd p0
-x12[0] yn im xp0 avdd p0
+x12[1] yn im xp0 avdd p4_1
+x12[0] yn im xp0 avdd p4_1
 x16[1] xp0 bpa avdd avdd p1_4
 x16[0] xp0 bpa avdd avdd p1_4
-x18[15] yn ip xp0 avdd p0
-x18[14] yn ip xp0 avdd p0
-x18[13] yn ip xp0 avdd p0
-x18[12] yn ip xp0 avdd p0
-x18[11] yn ip xp0 avdd p0
-x18[10] yn ip xp0 avdd p0
-x18[9] yn ip xp0 avdd p0
-x18[8] yn ip xp0 avdd p0
-x18[7] yn ip xp0 avdd p0
-x18[6] yn ip xp0 avdd p0
-x18[5] yn ip xp0 avdd p0
-x18[4] yn ip xp0 avdd p0
-x18[3] yn ip xp0 avdd p0
-x18[2] yn ip xp0 avdd p0
-x18[1] yn ip xp0 avdd p0
-x18[0] yn ip xp0 avdd p0
+x18[1] yn ip xp0 avdd p4_1
+x18[0] yn ip xp0 avdd p4_1
 x22[1] xp0 bpa avdd avdd p1_4
 x22[0] xp0 bpa avdd avdd p1_4
 .ends
@@ -263,21 +210,16 @@ xd D G X B p1_2
 .ends
 
 
-* expanding   symbol:  p0.sym # of pins=4
-** sym_path: /home/rodovalho/git/gf180mcu_rodovalho_ip__lpopamp/xschem/p0.sym
-** sch_path: /home/rodovalho/git/gf180mcu_rodovalho_ip__lpopamp/xschem/p0.sch
-.subckt p0 D G S B
+* expanding   symbol:  p4_1.sym # of pins=4
+** sym_path: /home/rodovalho/git/gf180mcu_rodovalho_ip__lpopamp/xschem/p4_1.sym
+** sch_path: /home/rodovalho/git/gf180mcu_rodovalho_ip__lpopamp/xschem/p4_1.sch
+.subckt p4_1 D G S B
 *.iopin D
 *.iopin G
 *.iopin S
 *.iopin B
-**** begin user architecture code
-
-
-xo d g s b pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=5.4u l=0.6u
-
-
-**** end user architecture code
+xl D G S B p2_1
+xr D G S B p2_1
 .ends
 
 
@@ -291,19 +233,6 @@ xo d g s b pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=5.4u l=0.6u
 *.iopin B
 xr D G S B n1_1
 xl D G S B n2_1
-.ends
-
-
-* expanding   symbol:  p4_1.sym # of pins=4
-** sym_path: /home/rodovalho/git/gf180mcu_rodovalho_ip__lpopamp/xschem/p4_1.sym
-** sch_path: /home/rodovalho/git/gf180mcu_rodovalho_ip__lpopamp/xschem/p4_1.sch
-.subckt p4_1 D G S B
-*.iopin D
-*.iopin G
-*.iopin S
-*.iopin B
-xl D G S B p2_1
-xr D G S B p2_1
 .ends
 
 
@@ -332,6 +261,24 @@ xl D G S B n2_1
 
 
 xl d g s b nfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=5.4u l=0.6u
+
+
+**** end user architecture code
+.ends
+
+
+* expanding   symbol:  p0.sym # of pins=4
+** sym_path: /home/rodovalho/git/gf180mcu_rodovalho_ip__lpopamp/xschem/p0.sym
+** sch_path: /home/rodovalho/git/gf180mcu_rodovalho_ip__lpopamp/xschem/p0.sch
+.subckt p0 D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+**** begin user architecture code
+
+
+xo d g s b pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=5.4u l=0.6u
 
 
 **** end user architecture code
@@ -377,6 +324,19 @@ xd D G X B p1_1
 .ends
 
 
+* expanding   symbol:  p2_1.sym # of pins=4
+** sym_path: /home/rodovalho/git/gf180mcu_rodovalho_ip__lpopamp/xschem/p2_1.sym
+** sch_path: /home/rodovalho/git/gf180mcu_rodovalho_ip__lpopamp/xschem/p2_1.sch
+.subckt p2_1 D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+xl D G S B p1_1
+xr D G S B p1_1
+.ends
+
+
 * expanding   symbol:  n1_1.sym # of pins=4
 ** sym_path: /home/rodovalho/git/gf180mcu_rodovalho_ip__lpopamp/xschem/n1_1.sym
 ** sch_path: /home/rodovalho/git/gf180mcu_rodovalho_ip__lpopamp/xschem/n1_1.sch
@@ -409,19 +369,6 @@ xl D G S B n1_1
 .ends
 
 
-* expanding   symbol:  p2_1.sym # of pins=4
-** sym_path: /home/rodovalho/git/gf180mcu_rodovalho_ip__lpopamp/xschem/p2_1.sym
-** sch_path: /home/rodovalho/git/gf180mcu_rodovalho_ip__lpopamp/xschem/p2_1.sch
-.subckt p2_1 D G S B
-*.iopin D
-*.iopin G
-*.iopin S
-*.iopin B
-xl D G S B p1_1
-xr D G S B p1_1
-.ends
-
-
 * expanding   symbol:  p1_1.sym # of pins=4
 ** sym_path: /home/rodovalho/git/gf180mcu_rodovalho_ip__lpopamp/xschem/p1_1.sym
 ** sch_path: /home/rodovalho/git/gf180mcu_rodovalho_ip__lpopamp/xschem/p1_1.sch
@@ -440,4 +387,5 @@ xr d g s b pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=5.4u l=1.8u
 **** end user architecture code
 .ends
 
+.GLOBAL GND
 .end

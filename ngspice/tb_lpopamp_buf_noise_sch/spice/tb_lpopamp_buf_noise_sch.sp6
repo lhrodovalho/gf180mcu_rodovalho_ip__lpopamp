@@ -25,7 +25,7 @@
 .param xvin_ac  = 1
 .param xvout_ac = 0
 
-.param xibias = 10u
+.param xibias = 4u
 
 .param xcl    = 30p
 .param xrl    = 1T
