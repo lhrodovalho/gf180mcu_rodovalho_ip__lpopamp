@@ -1,7 +1,15 @@
 * num: #num corner: #corner vdd: #vdd temp: #temp
 
 * Include models
-.lib ../..//models/cornerMOShv.lib #corner
+.include $PDK_ROOT/$PDK/libs.tech/ngspice/design.ngspice
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice #corner
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice mimcap_typical
+
+* no monte carlo
+.param
++  sw_stat_global = 0
++  sw_stat_mismatch = 0
+
 .temp #temp
 
 .include ../../netlists/lpopamp.sch.spice
@@ -57,8 +65,6 @@ RL out out_ 'xrl' m=1
 
 .save v(in) v(out)
 .control
-  pre_osdi ../../models/psp103_nqs.osdi
-  
   run
   plot in out
 

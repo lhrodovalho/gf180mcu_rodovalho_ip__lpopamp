@@ -1,7 +1,15 @@
 * num: #num corner: #corner vdd: #vdd temp: #temp
 
 * Include models
-.lib ../..//models/cornerMOShv.lib #corner
+.include $PDK_ROOT/$PDK/libs.tech/ngspice/design.ngspice
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice #corner
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice mimcap_typical
+
+* no monte carlo
+.param
++  sw_stat_global = 0
++  sw_stat_mismatch = 0
+
 .temp #temp
 
 .include ../../netlists/lpopamp.sch.spice
@@ -17,7 +25,7 @@
 .param xvin_ac  = 1
 .param xvout_ac = 0
 
-.param xibias = 10u
+.param xibias = 4u
 
 .param xcl    = 30p
 .param xrl    = 1T
@@ -35,10 +43,8 @@ i_ibias avdd ibias {xen*xibias}
 CL out avss 'xcl' m=1 
 
 * Simulation control
-.option rshunt = 1e12
+.option cshunt = 1e-15
 .control
-  pre_osdi ../../models/psp103_nqs.osdi
-
   noise v(out) v_in dec 10 1 1G
   let onoise_10k   = noise1.onoise_spectrum[40]
   let onoise_total = noise2.onoise_total

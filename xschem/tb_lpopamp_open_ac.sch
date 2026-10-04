@@ -1,8 +1,9 @@
-v {xschem version=2.9.9 file_version=1.2 }
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 N 360 -580 400 -580 { lab=im_}
 N 580 -550 620 -550 { lab=out}
@@ -44,9 +45,8 @@ N 360 -760 400 -760 { lab=im_}
 N 320 -580 360 -580 { lab=im_}
 N 660 -440 700 -440 { lab=cm}
 N 240 -100 480 -100 { lab=avss}
-N 360 -760 360 -660 { lab=im_}
+N 360 -760 360 -580 { lab=im_}
 N 620 -760 620 -550 { lab=out}
-N 360 -660 360 -580 { lab=im_}
 N 660 -460 660 -440 { lab=cm}
 N 460 -760 620 -760 { lab=out}
 N 220 -520 220 -480 { lab=ip}
@@ -95,37 +95,43 @@ C {devices/lab_pin.sym} 560 -200 0 1 {name=lcm0 sig_type=std_logic lab=cm}
 C {devices/lab_pin.sym} 560 -100 0 1 {name=lavss4 sig_type=std_logic lab=avss}
 C {devices/lab_pin.sym} 320 -580 0 0 {name=lim_ sig_type=std_logic lab=im_}
 C {devices/code_shown.sym} 30 -1120 0 0 {name=header only_toplevel=false value="
+.include $PDK_ROOT/$PDK/libs.tech/ngspice/design.ngspice
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice typical
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice mimcap_typical
 
-.lib /home/rodovalho/git/ihp130_rodovalho_ip__lpopamp/ngspice/models/cornerMOShv.lib mos_tt
+* no monte carlo
+.param
++  sw_stat_global = 0
++  sw_stat_mismatch = 0
+
 .temp 25
 "
 }
 C {devices/code_shown.sym} 1100 -1010 0 0 {name=control only_toplevel=false value="
-.option rshunt=1e12
+.option gmin=1e-15
+.option cshunt=1e-15
 .control
-  pre_osdi /home/rodovalho/git/ihp130_rodovalho_ip__lpopamp/ngspice/models/psp103_nqs.osdi
-
   * differential input
   alter v_ip   ac=0
   alter v_im   ac=1
   alter v_avdd ac=0
 
   op
-  ac dec 100 10m 10G
+  ac dec 100 0.1 10G
 
   * common-mode input
   alter v_ip   ac=1
   alter v_im   ac=1
   alter v_avdd ac=0
 
-  ac dec 100 10m 10G
+  ac dec 100 0.1 10G
 
   * power supply
   alter v_ip   ac=0
   alter v_im   ac=0
   alter v_avdd ac=1
 
-  ac dec 100 10m 10G
+  ac dec 100 0.1 10G
 
   let idd = op.i(v_avdd) 
   let av = db(ac1.out)
@@ -148,9 +154,9 @@ C {devices/code_shown.sym} 1100 -1010 0 0 {name=control only_toplevel=false valu
 .endc
 "}
 C {devices/code_shown.sym} 780 -1010 0 0 {name=params only_toplevel=false value="
-.param xavdd  = 3.3
+.param xavdd  = 5
 .param xavss  = 0
-.param xcm    = 1.65
+.param xcm    = 2.5
 .param xvin   = 0
 .param xvout  = 0
 
@@ -162,7 +168,7 @@ C {devices/code_shown.sym} 780 -1010 0 0 {name=params only_toplevel=false value=
 .param xvin_ac  = 1
 .param xvout_ac = 0
 
-.param xibias = 10u
+.param xibias = 4u
 
 .param xci    = 1T
 .param xri    = 1T

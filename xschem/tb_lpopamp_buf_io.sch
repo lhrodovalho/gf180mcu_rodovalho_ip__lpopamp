@@ -1,8 +1,9 @@
-v {xschem version=2.9.9 file_version=1.2 }
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 N 320 -580 360 -580 { lab=out}
 N 320 -680 320 -580 { lab=out}
@@ -81,20 +82,26 @@ C {devices/lab_pin.sym} 220 -420 0 1 {name=lavss4 sig_type=std_logic lab=avss}
 C {devices/lab_pin.sym} 100 -520 0 0 {name=lin2 sig_type=std_logic lab=in}
 C {devices/vsource.sym} 780 -390 0 0 {name=v_out value="dc \{xvout\} ac \{xvout_ac\}"}
 C {devices/lab_pin.sym} 860 -340 0 1 {name=lavss5 sig_type=std_logic lab=avss}
-C {devices/code_shown.sym} 80 -950 0 0 {name=header only_toplevel=false value="
-.lib /home/rodovalho/git/ihp130_rodovalho_ip__lpopamp/ngspice/models/cornerMOShv.lib mos_tt
+C {devices/code_shown.sym} 80 -1070 0 0 {name=header only_toplevel=false value="
+.include $PDK_ROOT/$PDK/libs.tech/ngspice/design.ngspice
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice typical
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice mimcap_typical
+
+* no monte carlo
+.param
++  sw_stat_global = 0
++  sw_stat_mismatch = 0
+
 .temp 25
 "
 }
 C {devices/code_shown.sym} 900 -950 0 0 {name=control only_toplevel=false value="
-.option rshunt=1E12
+.option gmin=1e-15
 .param xdc_initial = \{xavdd/2-10m\}
 .param xdc_final   = \{xavdd/2+10m\}
 .param xdc_step    = \{(xdc_final-xdc_initial)/100\}
 .dc v_out \{xdc_initial\} \{xdc_final\} \{xdc_step\}
 .control
-  pre_osdi /home/rodovalho/git/ihp130_rodovalho_ip__lpopamp/ngspice/models/psp103_nqs.osdi
-
   run
   let io = i(v_out)
   let vo = v(out)
@@ -102,7 +109,7 @@ C {devices/code_shown.sym} 900 -950 0 0 {name=control only_toplevel=false value=
 .endc
 "}
 C {devices/code_shown.sym} 620 -950 0 0 {name=params only_toplevel=false value="
-.param xavdd  = 3.3
+.param xavdd  = 5
 .param xavss  = 0
 .param xen    = 1
 .param xvin   = \{xavdd/2\}
@@ -112,7 +119,7 @@ C {devices/code_shown.sym} 620 -950 0 0 {name=params only_toplevel=false value="
 .param xvin_ac  = 0
 .param xvout_ac = 0
 
-.param xibias = 10u
+.param xibias = 4u
 
 .param xcl    = 1T
 .param xrl    = 1f

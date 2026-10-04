@@ -1,8 +1,9 @@
-v {xschem version=2.9.9 file_version=1.2 }
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 N 320 -580 360 -580 { lab=out}
 N 320 -680 320 -580 { lab=out}
@@ -47,11 +48,12 @@ N 780 -360 780 -340 { lab=avss}
 N 780 -340 860 -340 { lab=avss}
 N 620 -460 620 -340 { lab=avss}
 N 620 -340 780 -340 { lab=avss}
-N 780 -460 780 -420 { lab=out_}
+N 780 -440 780 -420 { lab=out_}
 N 620 -550 780 -550 { lab=out}
 N 780 -550 780 -520 { lab=out}
 N 780 -440 820 -440 { lab=out_}
 N 320 -420 360 -420 { lab=avss}
+N 780 -460 780 -440 { lab=out_}
 C {devices/title.sym} 160 -40 0 0 {name=l6 author="Luis Henrique Rodovalho"}
 C {lpopamp_ref.sym} 360 -300 0 0 {name=Xdut}
 C {devices/lab_pin.sym} 320 -460 0 0 {name=lavdd1 sig_type=std_logic lab=avdd}
@@ -85,8 +87,17 @@ C {devices/res.sym} 780 -490 0 0 {name=RL
 value=\{xrl\}
 m=1}
 C {devices/lab_pin.sym} 820 -440 0 1 {name=lout_ sig_type=std_logic lab=out_}
-C {devices/code_shown.sym} 60 -1040 0 0 {name=header only_toplevel=false value="
-.lib /home/rodovalho/git/ihp130_rodovalho_ip__lpopamp/ngspice/models/cornerMOShv.lib mos_tt
+C {devices/code_shown.sym} 60 -1090 0 0 {name=header only_toplevel=false value="
+.include $PDK_ROOT/$PDK/libs.tech/ngspice/design.ngspice
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice typical
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice mimcap_typical
+
+* no monte carlo
+.param
++  sw_stat_global = 0
++  sw_stat_mismatch = 0
+
+.temp 25
 "
 }
 C {devices/code_shown.sym} 940 -950 0 0 {name=control only_toplevel=false value="
@@ -96,7 +107,6 @@ C {devices/code_shown.sym} 940 -950 0 0 {name=control only_toplevel=false value=
 .param xdc_step    = \{(xdc_final-xdc_initial)/100\}
 .dc v_in \{xdc_initial\} \{xdc_final\} \{xdc_step\}
 .control
-  pre_osdi /home/rodovalho/git/ihp130_rodovalho_ip__lpopamp/ngspice/models/psp103_nqs.osdi
   run
   let vi = v(in)
   let vo = v(out)
@@ -108,7 +118,7 @@ C {devices/code_shown.sym} 940 -950 0 0 {name=control only_toplevel=false value=
 .endc
 "}
 C {devices/code_shown.sym} 660 -950 0 0 {name=params only_toplevel=false value="
-.param xavdd  = 3.3
+.param xavdd  = 5
 .param xavss  = 0
 .param xen    = 1
 .param xvin   = \{xavdd/2\}
@@ -118,7 +128,7 @@ C {devices/code_shown.sym} 660 -950 0 0 {name=params only_toplevel=false value="
 .param xvin_ac  = 0
 .param xvout_ac = 0
 
-.param xibias = 10u
+.param xibias = 4u
 
 .param xcl    = 30p
 .param xrl    = 5k

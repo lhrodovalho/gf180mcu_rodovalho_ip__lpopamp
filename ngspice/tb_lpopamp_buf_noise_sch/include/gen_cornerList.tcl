@@ -20,9 +20,9 @@ proc combine {paramList} {
   return $c
 }
 
-set paramNames {vdd        temp      corner                       }
-set paramList0 {{3.3}      {25}      {mos_tt}                     }
-set paramList1 {{3.0 3.6}  {-40 85}  {mos_ss mos_ff mos_sf mos_fs}}
+set paramNames {vdd      temp      corner       }
+set paramList0 {{5}      {25}      {typical}    }
+set paramList1 {{3 5.5}  {-40 85}  {ss ff sf fs}}
 
 set c0 [combine $paramList0]
 set c1 [combine $paramList1]

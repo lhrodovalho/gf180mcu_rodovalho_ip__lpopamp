@@ -1,8 +1,9 @@
-v {xschem version=2.9.9 file_version=1.2 }
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 N 320 -580 360 -580 { lab=out}
 N 320 -680 320 -580 { lab=out}
@@ -85,28 +86,35 @@ C {devices/res.sym} 780 -490 0 0 {name=RL
 value=\{xrl\}
 m=1}
 C {devices/lab_pin.sym} 820 -440 0 1 {name=lout_ sig_type=std_logic lab=out_}
-C {devices/code_shown.sym} 80 -1030 0 0 {name=header only_toplevel=false value="
-.lib /home/rodovalho/git/ihp130_rodovalho_ip__lpopamp/ngspice/models/cornerMOShv.lib mos_tt
+C {devices/code_shown.sym} 60 -1150 0 0 {name=header only_toplevel=false value="
+.include $PDK_ROOT/$PDK/libs.tech/ngspice/design.ngspice
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice typical
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice mimcap_typical
+
+* no monte carlo
+.param
++  sw_stat_global = 0
++  sw_stat_mismatch = 0
+
 .temp 25
 "
 }
 C {devices/code_shown.sym} 960 -1030 0 0 {name=control only_toplevel=false value="
-.option rshunt=1E12
+*.option rshunt=1E12
 .option method=Gear
 .option noinit list opts klu
 .param xtstart = 0
 .param xtend   = \{xper\}
-.param xtstep  = 1e-9
+.param xtstep  = \{xper/1000\}
 .tran \{xtstep\} \{xtend\} \{xtstart\}
 .control
-  pre_osdi /home/rodovalho/git/ihp130_rodovalho_ip__lpopamp/ngspice/models/psp103_nqs.osdi
   run
   plot in out
 
 .endc
 "}
 C {devices/code_shown.sym} 640 -1030 0 0 {name=params only_toplevel=false value="
-.param xavdd  = 3.3
+.param xavdd  = 5
 .param xavss  = 0
 .param xen    = 1
 .param xvin   = \{xavdd/2\}
@@ -116,7 +124,7 @@ C {devices/code_shown.sym} 640 -1030 0 0 {name=params only_toplevel=false value=
 .param xvin_ac  = 0
 .param xvout_ac = 0
 
-.param xibias = 10u
+.param xibias = 4u
 
 .param xcl    = 30p
 .param xrl    = 5k

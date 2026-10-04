@@ -1,8 +1,9 @@
-v {xschem version=2.9.9 file_version=1.2 }
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 N 320 -580 360 -580 { lab=out}
 N 320 -680 320 -580 { lab=out}
@@ -65,7 +66,7 @@ C {devices/vsource.sym} 240 -150 0 0 {name=v_avdd value="dc \{xavdd\} ac \{xavdd
 C {devices/lab_pin.sym} 320 -200 0 1 {name=lavdd0 sig_type=std_logic lab=avdd}
 C {devices/lab_pin.sym} 320 -100 0 1 {name=lavss0 sig_type=std_logic lab=avss}
 C {devices/gnd.sym} 160 -180 0 0 {name=l1 lab=GND}
-C {devices/vsource.sym} 1040 -390 0 0 {name=v_in value="dc \{xvin\} sine(\{xavdd/2\} \{xamp/2\} \{xfreq\})"}
+C {devices/vsource.sym} 1040 -390 0 0 {name=v_in value="dc \{xvin\} sine(\{(xvhi-xvlo)/2\} \{xamp/2\} \{xfreq\})"}
 C {devices/vsource.sym} 480 -150 0 0 {name=v_en value=\{xen*xavdd\}}
 C {devices/lab_pin.sym} 560 -200 0 1 {name=len0 sig_type=std_logic lab=en}
 C {devices/vsource.sym} 640 -150 0 0 {name=v_enb value=\{(1-xen)*xavdd\}}
@@ -85,22 +86,27 @@ C {devices/res.sym} 780 -490 0 0 {name=RL
 value=\{xrl\}
 m=1}
 C {devices/lab_pin.sym} 820 -440 0 1 {name=lout_ sig_type=std_logic lab=out_}
-C {devices/code_shown.sym} 80 -1030 0 0 {name=header only_toplevel=false value="
-.lib /home/rodovalho/git/ihp130_rodovalho_ip__lpopamp/ngspice/models/cornerMOShv.lib mos_tt
+C {devices/code_shown.sym} 80 -1130 0 0 {name=header only_toplevel=false value="
+.include $PDK_ROOT/$PDK/libs.tech/ngspice/design.ngspice
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice typical
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice mimcap_typical
+
+* no monte carlo
+.param
++  sw_stat_global = 0
++  sw_stat_mismatch = 0
+
 .temp 25
 "
 }
 C {devices/code_shown.sym} 960 -1030 0 0 {name=control only_toplevel=false value="
 .option gmin=1E-12
-.option rshunt=1E12
 .option method=Gear
 .param xtstart = \{xper\}\}
 .param xtend   = \{xtstart+10*xper\}
-.param xtstep  = 1e-9
+.param xtstep  = \{xper/1000\}
 .tran \{xtstep\} \{xtend\} \{xtstart\}
 .control
-  pre_osdi /home/rodovalho/git/ihp130_rodovalho_ip__lpopamp/ngspice/models/psp103_nqs.osdi
-
   run
   plot in out
 
@@ -123,7 +129,7 @@ C {devices/code_shown.sym} 960 -1030 0 0 {name=control only_toplevel=false value
 .endc
 "}
 C {devices/code_shown.sym} 640 -1030 0 0 {name=params only_toplevel=false value="
-.param xavdd  = 3.3
+.param xavdd  = 5
 .param xavss  = 0
 .param xen    = 1
 .param xvin   = \{xavdd/2\}
@@ -133,14 +139,14 @@ C {devices/code_shown.sym} 640 -1030 0 0 {name=params only_toplevel=false value=
 .param xvin_ac  = 0
 .param xvout_ac = 0
 
-.param xibias = 10u
+.param xibias = 4u
 
 .param xcl    = 30p
 .param xrl    = 5k
 
-.param xvlo  = \{10m\}
-.param xvhi  = \{xavdd-10m\}
-.param xamp  = \{xvlo-xvhi\}
+.param xvlo  = \{0\}
+.param xvhi  = \{xavdd-1\}
+.param xamp  = \{xvhi-xvlo-50m\}
 .param xfreq = \{1k\}
 .param xper  = \{1/xfreq\}
 "}

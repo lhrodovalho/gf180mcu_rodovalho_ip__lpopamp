@@ -1,15 +1,23 @@
-* num: 14 corner: mos_ff vdd: 3.6 temp: 85
+* num: 14 corner: ff vdd: 5.5 temp: 85
 
 * Include models
-.lib ../..//models/cornerMOShv.lib mos_ff
+.include $PDK_ROOT/$PDK/libs.tech/ngspice/design.ngspice
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice ff
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice mimcap_typical
+
+* no monte carlo
+.param
++  sw_stat_global = 0
++  sw_stat_mismatch = 0
+
 .temp 85
 
 .include ../../netlists/lpopamp.sch.spice
 
 * Simulation parameters
-.param xavdd  = 3.6
+.param xavdd  = 5.5
 .param xavss  = 0
-.param xcm    = {3.6/2}
+.param xcm    = {5.5/2}
 .param xvin   = 0
 .param xvout  = 0
 
@@ -21,7 +29,7 @@
 .param xvin_ac  = 1
 .param xvout_ac = 0
 
-.param xibias = 10u
+.param xibias = 4u
 
 .param xci    = 1T
 .param xri    = 1T
@@ -48,31 +56,30 @@ v_ip ip avss dc {xavdd/2}
 * Simulation control
 .save v(ip) v(out)
 .save i(v_avdd)
-.option rshunt = 1e12
+.option gmin   = 1e-15
+.option cshunt = 1e-15
 .control
-  pre_osdi ../../models/psp103_nqs.osdi
-
   * differential input
   alter v_ip   ac=0
   alter v_im   ac=1
   alter v_avdd ac=0
 
   op
-  ac dec 10 10m 10G
+  ac dec 10 0.1 10G
 
   * common-mode input
   alter v_ip   ac=1
   alter v_im   ac=1
   alter v_avdd ac=0
 
-  ac dec 10 10m 10G
+  ac dec 10 0.1 10G
 
   * power supply
   alter v_ip   ac=0
   alter v_im   ac=0
   alter v_avdd ac=1
 
-  ac dec 10 10m 10G
+  ac dec 10 0.1 10G
 
   let vos  = op.v(out) - op.v(ip)
   let idd  = op.i(v_avdd)
@@ -95,7 +102,7 @@ v_ip ip avss dc {xavdd/2}
   print idd vos
 
   echo "num,corner,vdd,temp,gbw,pm,av0p1hz,cmrr0p1hz,psrr0p1hz,idd,vos" > ./meas/tb_lpopamp_open_ac_sch.meas14
-  echo "14,mos_ff,3.6,85,$&gbw,$&pm,$&av0p1hz,$&cmrr0p1hz,$&psrr0p1hz,$&idd,$&vos" >> ./meas/tb_lpopamp_open_ac_sch.meas14
+  echo "14,ff,5.5,85,$&gbw,$&pm,$&av0p1hz,$&cmrr0p1hz,$&psrr0p1hz,$&idd,$&vos" >> ./meas/tb_lpopamp_open_ac_sch.meas14
 
   wrdata ./data/tb_lpopamp_open_ac_sch_av.dat14 av
   wrdata ./data/tb_lpopamp_open_ac_sch_ph.dat14 ph

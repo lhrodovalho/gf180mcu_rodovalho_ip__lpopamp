@@ -1,7 +1,15 @@
 * num: #num corner: #corner vdd: #vdd temp: #temp
 
 * Include models
-.lib ../..//models/cornerMOShv.lib #corner
+.include $PDK_ROOT/$PDK/libs.tech/ngspice/design.ngspice
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice #corner
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice mimcap_typical
+
+* no monte carlo
+.param
++  sw_stat_global = 0
++  sw_stat_mismatch = 0
+
 .temp #temp
 
 .include ../../netlists/lpopamp.sch.spice
@@ -26,8 +34,8 @@
 .param xrl    = 5k
 
 .param xamp  = {xavdd-100m}
-.param xvlo  = {xavdd/2-xamp/2}
-.param xvhi  = {xavdd/2+xamp/2}
+.param xvlo  = {50m}
+.param xvhi  = {xavdd-1}
 .param xper  = {40u}
 .param xtdel = {xper/4}
 .param xtr   = {xper/1000}
@@ -49,22 +57,20 @@ RL out out_ 'xrl' m=1
 
 * Simulation control
 .option gmin=1e-12
-.option rshunt=1e12
+.option cshunt=1e-15
 .option method=Gear
 .param xtstart = 0
 .param xtend   = {xper}
-.param xtstep  = 1e-9
+.param xtstep  = {xper/1000}
 .tran {xtstep} {xtend} {xtstart}
 
 .save v(in) v(out)
 .control
-  pre_osdi ../../models/psp103_nqs.osdi
-
   run
   plot in out
 
   let avdd = 3.3
-  let vhi  = avdd-50m
+  let vhi  = avdd-1
   let vlo  = 50m
   let vmax = vlo+0.9*(vhi-vlo)
   let vmin = vlo+0.1*(vhi-vlo)

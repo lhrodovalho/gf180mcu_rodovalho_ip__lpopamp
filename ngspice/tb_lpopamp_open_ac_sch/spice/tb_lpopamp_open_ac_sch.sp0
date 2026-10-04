@@ -1,19 +1,23 @@
-* num: 1 corner: mos_tt vdd: 3.3 temp: 25
+* num: 0 corner: typical vdd: 5 temp: 25
 
 * Include models
-.lib ../..//models/cornerMOShv.lib mos_tt
+.include $PDK_ROOT/$PDK/libs.tech/ngspice/design.ngspice
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice typical
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice mimcap_typical
+
+* no monte carlo
+.param
++  sw_stat_global = 0
++  sw_stat_mismatch = 0
+
 .temp 25
 
-*.include ../../netlists/lpopamp.sch.spice
-*.include ../../../magic/sliceA.spice
-*.include ../../../magic/lpopamp_flat.spice
-.include ../../../magic/lpopamp.spice
-*.include ../../../magic/lpopamp_sliceB.spice
+.include ../../netlists/lpopamp.sch.spice
 
 * Simulation parameters
-.param xavdd  = 3.3
+.param xavdd  = 5
 .param xavss  = 0
-.param xcm    = {3.3/2}
+.param xcm    = {5/2}
 .param xvin   = 0
 .param xvout  = 0
 
@@ -25,29 +29,18 @@
 .param xvin_ac  = 1
 .param xvout_ac = 0
 
-.param xibias = 7.75u
+.param xibias = 4u
 
 .param xci    = 1T
 .param xri    = 1T
 .param xlf    = 1T
 .param xrf    = 1f
-.param xcl    = 15p
+.param xcl    = 30p
 .param xrl    = 5k
 
 * Design under test
 *.subckt lpopamp  im  ip  o  avdd  avss  vsub  en  enb  ibias
-*Xdut im_ ip out avdd  avss  avss  en  enb  ibias lpopamp
-*Xdut im_ ip out avss avdd ibias en sliceA
-
-*.subckt lpopamp_flat in_m in_p out avdd avss ib en
-*Xdut im_ ip out avdd avss ibias en lpopamp_flat
-
-*.subckt lpopamp in_m in_p ib en avss avdd out
-Xdut im_ ip ibias en avss avdd out lpopamp
-
-*.subckt lpopamp_sliceB in_m in_p out avss avdd ib en zp_p zn_p
-*Xdut im_ ip out avss avdd ibias en zp_p zn_p lpopamp_sliceB
-
+Xdut im_ ip out avdd  avss  avss  en  enb  ibias lpopamp
 v_avss GND avss xavss
 v_avdd avdd avss dc {xavdd} ac {xavdd_ac} 
 v_en en avss {xen*xavdd} 
@@ -63,31 +56,30 @@ v_ip ip avss dc {xavdd/2}
 * Simulation control
 .save v(ip) v(out)
 .save i(v_avdd)
-.option rshunt = 1e12
+.option gmin   = 1e-15
+.option cshunt = 1e-15
 .control
-  pre_osdi ../../models/psp103_nqs.osdi
-
   * differential input
   alter v_ip   ac=0
   alter v_im   ac=1
   alter v_avdd ac=0
 
   op
-  ac dec 10 10m 10G
+  ac dec 10 0.1 10G
 
   * common-mode input
   alter v_ip   ac=1
   alter v_im   ac=1
   alter v_avdd ac=0
 
-  ac dec 10 10m 10G
+  ac dec 10 0.1 10G
 
   * power supply
   alter v_ip   ac=0
   alter v_im   ac=0
   alter v_avdd ac=1
 
-  ac dec 10 10m 10G
+  ac dec 10 0.1 10G
 
   let vos  = op.v(out) - op.v(ip)
   let idd  = op.i(v_avdd)
@@ -109,13 +101,13 @@ v_ip ip avss dc {xavdd/2}
   plot ph
   print idd vos
 
-  echo "num,corner,vdd,temp,gbw,pm,av0p1hz,cmrr0p1hz,psrr0p1hz,idd,vos" > ./meas/tb_lpopamp_open_ac_sch.meas1
-  echo "1,mos_ss,3.0,-40,$&gbw,$&pm,$&av0p1hz,$&cmrr0p1hz,$&psrr0p1hz,$&idd,$&vos" >> ./meas/tb_lpopamp_open_ac_sch.meas1
+  echo "num,corner,vdd,temp,gbw,pm,av0p1hz,cmrr0p1hz,psrr0p1hz,idd,vos" > ./meas/tb_lpopamp_open_ac_sch.meas0
+  echo "0,typical,5,25,$&gbw,$&pm,$&av0p1hz,$&cmrr0p1hz,$&psrr0p1hz,$&idd,$&vos" >> ./meas/tb_lpopamp_open_ac_sch.meas0
 
-  wrdata ./data/tb_lpopamp_open_ac_sch_av.dat1 av
-  wrdata ./data/tb_lpopamp_open_ac_sch_ph.dat1 ph
-  wrdata ./data/tb_lpopamp_open_ac_sch_cmrr.dat1 cmrr
-  wrdata ./data/tb_lpopamp_open_ac_sch_psrr.dat1 psrr
+  wrdata ./data/tb_lpopamp_open_ac_sch_av.dat0 av
+  wrdata ./data/tb_lpopamp_open_ac_sch_ph.dat0 ph
+  wrdata ./data/tb_lpopamp_open_ac_sch_cmrr.dat0 cmrr
+  wrdata ./data/tb_lpopamp_open_ac_sch_psrr.dat0 psrr
 
 .endc
 

@@ -1,8 +1,9 @@
-v {xschem version=2.9.9 file_version=1.2 }
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 N 320 -580 360 -580 { lab=out}
 N 320 -680 320 -580 { lab=out}
@@ -74,15 +75,22 @@ value=\{xcl\}}
 C {devices/lab_pin.sym} 220 -420 0 1 {name=lavss4 sig_type=std_logic lab=avss}
 C {devices/lab_pin.sym} 100 -520 0 0 {name=lin2 sig_type=std_logic lab=in}
 C {devices/lab_pin.sym} 660 -440 0 1 {name=lavss5 sig_type=std_logic lab=avss}
-C {devices/code_shown.sym} 80 -950 0 0 {name=header only_toplevel=false value="
-.lib /home/rodovalho/git/ihp130_rodovalho_ip__lpopamp/ngspice/models/cornerMOShv.lib mos_tt
+C {devices/code_shown.sym} 90 -1070 0 0 {name=header only_toplevel=false value="
+.include $PDK_ROOT/$PDK/libs.tech/ngspice/design.ngspice
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice typical
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice mimcap_typical
+
+* no monte carlo
+.param
++  sw_stat_global = 0
++  sw_stat_mismatch = 0
+
+.temp 25
 "
 }
 C {devices/code_shown.sym} 900 -950 0 0 {name=control only_toplevel=false value="
-.option rshunt=1e12
+.option cshunt=1e-15
 .control
-  pre_osdi /home/rodovalho/git/ihp130_rodovalho_ip__lpopamp/ngspice/models/psp103_nqs.osdi
-
   run
   noise v(out) v_in dec 10 1 1G
   plot noise1.onoise_spectrum loglog
@@ -90,7 +98,7 @@ C {devices/code_shown.sym} 900 -950 0 0 {name=control only_toplevel=false value=
 .endc
 "}
 C {devices/code_shown.sym} 620 -950 0 0 {name=params only_toplevel=false value="
-.param xavdd  = 3.3
+.param xavdd  = 5
 .param xavss  = 0
 .param xen    = 1
 .param xvin   = \{xavdd/2\}
@@ -100,7 +108,7 @@ C {devices/code_shown.sym} 620 -950 0 0 {name=params only_toplevel=false value="
 .param xvin_ac  = 1
 .param xvout_ac = 0
 
-.param xibias = 10u
+.param xibias = 4u
 
 .param xcl    = 30p
 .param xrl    = 1T

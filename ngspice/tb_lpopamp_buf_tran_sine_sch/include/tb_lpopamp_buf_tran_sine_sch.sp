@@ -1,7 +1,15 @@
 * num: #num corner: #corner vdd: #vdd temp: #temp
 
 * Include models
-.lib ../..//models/cornerMOShv.lib #corner
+.include $PDK_ROOT/$PDK/libs.tech/ngspice/design.ngspice
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice #corner
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice mimcap_typical
+
+* no monte carlo
+.param
++  sw_stat_global = 0
++  sw_stat_mismatch = 0
+
 .temp #temp
 
 .include ../../netlists/lpopamp.sch.spice
@@ -10,8 +18,8 @@
 .param xavdd  = #vdd
 .param xavss  = 0
 .param xen    = 1
-.param xvin   = {xavdd/2}
-.param xvout  = {xavdd/2}
+.param xvin   = {(xvhi-xvlo)/2}
+.param xvout  = {(xvhi-xvlo)/2}
 
 .param xavdd_ac = 0
 .param xvin_ac  = 0
@@ -22,8 +30,8 @@
 .param xcl    = 30p
 .param xrl    = 5k
 
-.param xvlo  = {10m}
-.param xvhi  = {xavdd-10m}
+.param xvlo  = {50m}
+.param xvhi  = {xavdd-1}
 .param xamp  = {xvlo-xvhi}
 .param xfreq = {1k}
 .param xper  = {1/xfreq}
@@ -48,16 +56,14 @@ RL out out_ 'xrl' m=1
 .option reltol = 0.003
 .option cshunt = 1e-15
 .option method = Gear
-.param xtstart = {xper}}
+.param xtstart = {xper}
 .param xtend   = {xtstart+4*xper}
-.param xtstep  = 1e-9
+.param xtstep  = {xper/1000}
 .tran {xtstep} {xtend} {xtstart}
 
 .save v(in) v(out)
-.option rshunt = 1e12
+.option cshunt = 1e-15
 .control
-  pre_osdi ../../models/psp103_nqs.osdi
-
   run
   plot in out
 

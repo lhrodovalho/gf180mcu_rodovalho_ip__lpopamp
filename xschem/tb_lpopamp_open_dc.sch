@@ -1,8 +1,9 @@
-v {xschem version=2.9.9 file_version=1.2 }
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 N 540 -550 580 -550 { lab=out}
 N 320 -460 360 -460 { lab=avdd}
@@ -108,19 +109,27 @@ C {devices/vsource.sym} 400 -150 0 0 {name=v_cm value="\{xcm\}"}
 C {devices/lab_pin.sym} 480 -200 0 1 {name=lcm0 sig_type=std_logic lab=cm}
 C {devices/lab_pin.sym} 480 -100 0 1 {name=lavss4 sig_type=std_logic lab=avss}
 C {devices/code_shown.sym} 60 -1140 0 0 {name=header only_toplevel=false value="
-.lib /home/rodovalho/git/ihp130_rodovalho_ip__lpopamp/ngspice/models/cornerMOShv.lib mos_tt
+.include $PDK_ROOT/$PDK/libs.tech/ngspice/design.ngspice
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice typical
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice mimcap_typical
+
+* no monte carlo
+.param
++  sw_stat_global = 0
++  sw_stat_mismatch = 0
+
+.temp 25
+
 "
 }
 C {devices/code_shown.sym} 920 -1010 0 0 {name=control only_toplevel=false value="
-.option rshunt=1e12
+.option gmin=1e-15
 .param xdc_initial = \{-0.2m\}
 .param xdc_final   = \{ 0.2m\}
 .param xdc_step    = \{(xdc_final-xdc_initial)/1000\}
 .dc v_in \{xdc_initial\} \{xdc_final\} \{xdc_step\}
 .control
-  pre_osdi /home/rodovalho/git/ihp130_rodovalho_ip__lpopamp/ngspice/models/psp103_nqs.osdi
-  
-run
+  run
   let vi = v(ip)-v(im)
   let vo = v(out)
   let av = db(abs(deriv(vo)/deriv(vi)))
@@ -129,9 +138,9 @@ run
 .endc
 "}
 C {devices/code_shown.sym} 640 -1010 0 0 {name=params only_toplevel=false value="
-.param xavdd  = 3.3
+.param xavdd  = 5
 .param xavss  = 0
-.param xcm    = 1.65
+.param xcm    = 2.5
 .param xvin   = 0
 .param xvout  = 0
 
@@ -143,7 +152,7 @@ C {devices/code_shown.sym} 640 -1010 0 0 {name=params only_toplevel=false value=
 .param xvin_ac  = 0
 .param xvout_ac = 0
 
-.param xibias = 10u
+.param xibias = 4u
 
 .param xci    = 1f
 .param xri    = 1f
