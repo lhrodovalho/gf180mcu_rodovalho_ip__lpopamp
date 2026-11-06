@@ -1,9 +1,9 @@
-v {xschem version=3.4.8RC file_version=1.3}
+v {xschem version=3.4.4 file_version=1.2
+}
 G {}
 K {}
 V {}
 S {}
-F {}
 E {}
 N 320 -580 360 -580 { lab=out}
 N 320 -680 320 -580 { lab=out}

@@ -10,6 +10,6 @@ C {devices/iopin.sym} 290 -200 0 0 {name=p2 lab=G}
 C {devices/iopin.sym} 290 -160 0 0 {name=p3 lab=S}
 C {devices/iopin.sym} 290 -120 0 0 {name=p4 lab=B}
 C {devices/code_shown.sym} 20 -90 0 0 {name=s1 only_toplevel=false value="
-xl d g s b pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=5.4u l=1.8u
-xr d g s b pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=5.4u l=1.8u
+xl d g s b pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=6.6u l=0.6u
+xr d g s b pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=6.6u l=0.6u
 "}
