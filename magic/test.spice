@@ -1,6 +1,0 @@
-* NGSPICE file created from test.ext - technology: gf180mcuC
-
-.subckt test
-X0 a_30_0# a_0_n10# a_n10_0# SUB nfet_06v0 ad=1.5p pd=7u as=1.5p ps=7u w=3u l=1.5u
-.ends
-
