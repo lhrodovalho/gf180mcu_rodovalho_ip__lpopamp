@@ -10,154 +10,38 @@ Option cshunt: 1164 capacitors added with 1e-15 F each
 Doing analysis at TEMP = 85.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
-Warning: singular matrix:  check node xdut.w_1258_130#
-
 Note: Starting dynamic gmin stepping
-Warning: singular matrix:  check nodes xdut.w_1258_130# and xdut.w_1258_1966#
-
-Warning: Dynamic gmin stepping failed
-Note: Starting true gmin stepping
-Warning: singular matrix:  check nodes xdut.w_1258_130# and xdut.w_1258_1966#
-
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: singular matrix:  check nodes xdut.w_1258_130# and xdut.w_1258_1966#
-
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: singular matrix:  check nodes xdut.w_1258_130# and xdut.w_1258_1966#
-
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: singular matrix:  check nodes xdut.w_1258_130# and xdut.w_1258_1966#
-
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: True gmin stepping failed
-Note: Starting source stepping
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: source stepping failed
-Note: Transient op started
-Note: Transient op finished successfully
+Note: Dynamic gmin stepping completed
 
 No. of Data Rows : 1
 Doing analysis at TEMP = 85.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
-Warning: singular matrix:  check node xdut.w_1258_130#
-
 Note: Starting dynamic gmin stepping
-Warning: singular matrix:  check nodes xdut.w_1258_130# and xdut.w_1258_1966#
-
-Warning: Dynamic gmin stepping failed
-Note: Starting true gmin stepping
-Warning: singular matrix:  check nodes xdut.w_1258_130# and xdut.w_1258_1966#
-
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: singular matrix:  check nodes xdut.w_1258_130# and xdut.w_1258_1966#
-
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: singular matrix:  check nodes xdut.w_1258_130# and xdut.w_1258_1966#
-
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: singular matrix:  check nodes xdut.w_1258_130# and xdut.w_1258_1966#
-
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: True gmin stepping failed
-Note: Starting source stepping
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: source stepping failed
-Note: Transient op started
-Note: Transient op finished successfully
+Note: Dynamic gmin stepping completed
 
 No. of Data Rows : 111
 Doing analysis at TEMP = 85.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
-Warning: singular matrix:  check node xdut.w_1258_130#
-
 Note: Starting dynamic gmin stepping
-Warning: singular matrix:  check nodes xdut.w_1258_130# and xdut.w_1258_1966#
-
-Warning: Dynamic gmin stepping failed
-Note: Starting true gmin stepping
-Warning: singular matrix:  check nodes xdut.w_1258_130# and xdut.w_1258_1966#
-
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: singular matrix:  check nodes xdut.w_1258_130# and xdut.w_1258_1966#
-
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: singular matrix:  check nodes xdut.w_1258_130# and xdut.w_1258_1966#
-
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: singular matrix:  check nodes xdut.w_1258_130# and xdut.w_1258_1966#
-
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: True gmin stepping failed
-Note: Starting source stepping
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: source stepping failed
-Note: Transient op started
-Note: Transient op finished successfully
+Note: Dynamic gmin stepping completed
 
 No. of Data Rows : 111
 Doing analysis at TEMP = 85.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
-Warning: singular matrix:  check node xdut.w_1258_130#
-
 Note: Starting dynamic gmin stepping
-Warning: singular matrix:  check nodes xdut.w_1258_130# and xdut.w_1258_1966#
-
-Warning: Dynamic gmin stepping failed
-Note: Starting true gmin stepping
-Warning: singular matrix:  check nodes xdut.w_1258_130# and xdut.w_1258_1966#
-
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: singular matrix:  check nodes xdut.w_1258_130# and xdut.w_1258_1966#
-
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: singular matrix:  check nodes xdut.w_1258_130# and xdut.w_1258_1966#
-
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: singular matrix:  check nodes xdut.w_1258_130# and xdut.w_1258_1966#
-
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: True gmin stepping failed
-Note: Starting source stepping
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: spfactor.c, 230, Pivot for step = 1171 not found
-Warning: source stepping failed
-Note: Transient op started
-Note: Transient op finished successfully
+Note: Dynamic gmin stepping completed
 
 No. of Data Rows : 111
-av0p1hz             =  9.223548e+01
-gbw                 =  1.166397e+06
-pm180               =  5.088300e+07
-pm                  =  6.175181e+01
-gm                  =  -7.709866e+01
-cmrr0p1hz           =  1.130322e+02
-psrr0p1hz           =  5.052385e+01
+av0p1hz             =  9.301669e+01
+gbw                 =  1.168061e+06
+pm180               =  5.095192e+07
+pm                  =  6.185331e+01
+gm                  =  -7.704509e+01
+cmrr0p1hz           =  1.165206e+02
+psrr0p1hz           =  5.056807e+01
 
 Warning: command 'plot' is not available during batch simulation, ignored!
     You may use Gnuplot instead.
@@ -166,25 +50,25 @@ Warning: command 'plot' is not available during batch simulation, ignored!
 Warning: command 'plot' is not available during batch simulation, ignored!
     You may use Gnuplot instead.
 
-idd = -1.06891e-04
-vos = -2.53707e-01
+idd = -1.08524e-04
+vos = 2.400081e-04
 binary raw file "./out/sp5.raw"
 Doing analysis at TEMP = 85.000000 and TNOM = 27.000000
 
 Using SPARSE 1.3 as Direct Linear Solver
 OP information in rawfile.
 
-Total analysis time (seconds) = 7.14402
+Total analysis time (seconds) = 3.0937
 
-Total elapsed time (seconds) = 7.421 
+Total elapsed time (seconds) = 3.371 
 
 Total DRAM available = 19163.027 MB.
-DRAM currently available = 9255.426 MB.
-Maximum ngspice program size =   68.781 MB.
-Current ngspice program size =   52.438 MB.
+DRAM currently available = 9117.637 MB.
+Maximum ngspice program size =   68.812 MB.
+Current ngspice program size =   52.512 MB.
 
-Shared ngspice pages =   12.027 MB.
+Shared ngspice pages =   12.070 MB.
 Text (code) pages =    6.406 MB.
 Stack = 0 bytes.
-Library pages =   48.574 MB.
+Library pages =   48.605 MB.
 

@@ -41,6 +41,7 @@
 * Design under test
 *.subckt lpopamp  im  ip  o  avdd  avss  vsub  en  ibias
 Xdut im_ ip out avdd  avss  avss  en  ibias lpopamp
+
 v_avss GND avss xavss
 v_avdd avdd avss dc {xavdd} ac {xavdd_ac} 
 v_en en avss {xen*xavdd} 
@@ -58,6 +59,7 @@ v_ip ip avss dc {xavdd/2}
 .save i(v_avdd)
 .option gmin   = 1e-15
 .option cshunt = 1e-15
+.option rshunt = 1e12
 .control
   * differential input
   alter v_ip   ac=0
