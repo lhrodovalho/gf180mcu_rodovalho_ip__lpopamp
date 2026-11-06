@@ -348,8 +348,10 @@ xr D G S B p1_1
 **** begin user architecture code
 
 
-xd d g x b nfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=5.4u l=1.8u
-xs x g s b nfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=5.4u l=1.8u
+*xd d g x b nfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=5.4u l=1.8u
+*xs x g s b nfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=5.4u l=1.8u
+xd d g x b nfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=5.4u l=0.6u
+xs x g s b nfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=5.4u l=0.6u
 
 
 **** end user architecture code
@@ -380,8 +382,10 @@ xl D G S B n1_1
 **** begin user architecture code
 
 
-xl d g s b pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=5.4u l=1.8u
-xr d g s b pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=5.4u l=1.8u
+*xl d g s b pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=5.4u l=1.8u
+*xr d g s b pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=5.4u l=1.8u
+xl d g s b pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=5.4u l=0.6u
+xr d g s b pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=5.4u l=0.6u
 
 
 **** end user architecture code
