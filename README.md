@@ -1,2 +1,2 @@
-# ihp130_rodovalho_ip__lpopamp
-IHP 130nm general purpose operational amplifier
+# gf180mcu_rodovalho_ip__lpopamp
+GF180 180nm general purpose operational amplifier
