@@ -1,0 +1,82 @@
+
+Note: Compatibility modes selected: hs a
+
+Warning: m=xx on .subckt line will override multiplier m hierarchy!
+
+
+Circuit: * num: 9 corner: ss vdd: 5.5 temp: -40
+
+Option cshunt: 16 capacitors added with 1e-15 F each
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+xdut.xb                                      3
+a                                            0
+dvdd                                         3
+xdut.yb                                    5.5
+avdd                                       5.5
+xdut.y                             4.01382e-09
+qb                                         5.5
+avss                                         0
+xdut.x                              6.2945e-09
+q                                  5.21442e-09
+v_a#branch                                   0
+v_dvdd#branch                     -6.02025e-12
+v_avdd#branch                      -4.4382e-11
+v_avss#branch                      6.34472e-19
+
+
+No. of Data Rows : 174
+
+Warning: command 'plot' is not available during batch simulation, ignored!
+    You may use Gnuplot instead.
+
+binary raw file "../out/sp9.raw"
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+No. of Data Columns : 3  
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+xdut.xb                                      3
+a                                            0
+dvdd                                         3
+xdut.yb                                    5.5
+avdd                                       5.5
+xdut.y                             4.01382e-09
+qb                                         5.5
+avss                                         0
+xdut.x                              6.2945e-09
+q                                  5.21442e-09
+v_a#branch                                   0
+v_dvdd#branch                     -6.02025e-12
+v_avdd#branch                      -4.4382e-11
+v_avss#branch                      6.34472e-19
+
+
+No. of Data Rows : 174
+
+Total analysis time (seconds) = 0.0652143
+
+Total elapsed time (seconds) = 0.122 
+
+Total DRAM available = 19163.016 MB.
+DRAM currently available = 13211.602 MB.
+Maximum ngspice program size =   35.562 MB.
+Current ngspice program size =   18.875 MB.
+
+Shared ngspice pages =   11.668 MB.
+Text (code) pages =    6.406 MB.
+Stack = 0 bytes.
+Library pages =   15.355 MB.
+

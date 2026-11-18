@@ -1,0 +1,59 @@
+* num: 11 corner: sf vdd: 5.5 temp: -40
+
+* Include models
+.include $PDK_ROOT/$PDK/libs.tech/ngspice/design.ngspice
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice sf
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sm141064.ngspice mimcap_typical
+
+* no monte carlo
+.param
++  sw_stat_global = 0
++  sw_stat_mismatch = 0
+
+.temp -40
+
+.include ../../netlists/lvlshifter.cc.spice
+
+
+* Simulation parameters
+.param xavdd = 5.5
+.param xdvdd = 3.0
+.param xavss = 0
+
+.param xvhi  = {xdvdd}
+.param xvlo  = {0}
+.param xper  = {1u}
+.param xtdel = {0}
+.param xtr   = {xper/2}
+.param xpw   = {1f}
+
+* Design under test
+*.subckt lvlshifter a q qb vddlo vddhi vss
+xdut a q qb dvdd avdd avss lvlshifter
+
+v_avss GND avss xavss
+v_avdd avdd avss dc {xavdd} 
+v_dvdd dvdd avss dc {xdvdd} 
+v_a a avss pulse({xvlo} {xvhi} {xtdel} {xtr} {xtr} {xpw} {xper}) 
+
+* Simulation control
+.option gmin=1e-12
+.option cshunt=1e-15
+.option method=Gear
+.param xtstart = 0
+.param xtend   = {xper}
+.param xtstep  = {xper/100}
+.tran {xtstep} {xtend} {xtstart}
+
+.save v(a) v(q)
+.control
+  run
+  plot in out
+
+  wrdata ../data/tb_lvlshifter.dat11 v(a) v(q)
+
+.endc
+
+.GLOBAL GND 
+.end 
+

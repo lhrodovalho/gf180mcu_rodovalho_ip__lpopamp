@@ -1,0 +1,29 @@
+* NGSPICE file created from lvlshifter.ext - technology: gf180mcuC
+
+.subckt lvlshifter a q qb vddlo vddhi vss
+X0 xb a vddlo vddlo pfet_03v3 ad=1.08p pd=4.8u as=1.08p ps=4.8u w=1.8u l=0.6u
+X1 a_168_204# yb vddhi vddhi pfet_06v0 ad=0.54p pd=2.4u as=1.08p ps=4.8u w=1.8u l=0.6u
+X2 yb y a_336_204# vddhi pfet_06v0 ad=1.08p pd=4.8u as=0.54p ps=2.4u w=1.8u l=0.6u
+X3 qb y vddhi vddhi pfet_06v0 ad=1.08p pd=4.8u as=1.08p ps=4.8u w=1.8u l=0.6u
+X4 vss xb y vss nfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=1.8u l=0.6u
+X5 vss x yb vss nfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=1.8u l=0.6u
+X6 x xb vss vss nfet_03v3 ad=0.72p pd=3.6u as=0.72p ps=3.6u w=1.2u l=0.6u
+X7 xb a vss vss nfet_03v3 ad=0.72p pd=3.6u as=0.72p ps=3.6u w=1.2u l=0.6u
+X8 a_192_204# yb a_168_204# vddhi pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=1.8u l=0.6u
+X9 y xb vss vss nfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=1.8u l=0.6u
+X10 a_288_204# x vddhi vddhi pfet_06v0 ad=0.54p pd=2.4u as=1.08p ps=4.8u w=1.8u l=0.6u
+X11 x xb vddlo vddlo pfet_03v3 ad=1.08p pd=4.8u as=1.08p ps=4.8u w=1.8u l=0.6u
+X12 y xb vss vss nfet_06v0 ad=0.54p pd=2.4u as=1.08p ps=4.8u w=1.8u l=0.6u
+X13 yb x vss vss nfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=1.8u l=0.6u
+X14 yb x vss vss nfet_06v0 ad=0.54p pd=2.4u as=1.08p ps=4.8u w=1.8u l=0.6u
+X15 q yb vddhi vddhi pfet_06v0 ad=1.08p pd=4.8u as=1.08p ps=4.8u w=1.8u l=0.6u
+X16 vss xb y vss nfet_06v0 ad=1.08p pd=4.8u as=0.54p ps=2.4u w=1.8u l=0.6u
+X17 qb y vss vss nfet_06v0 ad=1.08p pd=4.8u as=1.08p ps=4.8u w=1.8u l=0.6u
+X18 q yb vss vss nfet_06v0 ad=1.08p pd=4.8u as=1.08p ps=4.8u w=1.8u l=0.6u
+X19 vss x yb vss nfet_06v0 ad=1.08p pd=4.8u as=0.54p ps=2.4u w=1.8u l=0.6u
+X20 a_312_204# x a_288_204# vddhi pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=1.8u l=0.6u
+X21 a_216_204# xb a_192_204# vddhi pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=1.8u l=0.6u
+X22 y xb a_216_204# vddhi pfet_06v0 ad=1.08p pd=4.8u as=0.54p ps=2.4u w=1.8u l=0.6u
+X23 a_336_204# y a_312_204# vddhi pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=1.8u l=0.6u
+.ends
+

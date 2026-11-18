@@ -1,6 +1,6 @@
 #! /bin/bash
 
-magic -dnull -noconsole -T ihp-sg13g2.tech << EOF
+magic -dnull -noconsole -T gf180mcuC.tech << EOF
 load lpopamp
 select top cell
 extract path extfiles
