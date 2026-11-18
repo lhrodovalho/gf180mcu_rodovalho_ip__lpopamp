@@ -1,0 +1,1311 @@
+* NGSPICE file created from slot_6.ext - technology: gf180mcuC
+
+.subckt lvlshifter a q qb vddlo vddhi vss
+X0 a_3360_2040# y a_3120_2040# vddhi pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=1.8u l=0.6u
+X1 y xb vss vss nfet_06v0 ad=0.54p pd=2.4u as=1.08p ps=4.8u w=1.8u l=0.6u
+X2 xb a vss vss nfet_03v3 ad=0.72p pd=3.6u as=0.72p ps=3.6u w=1.2u l=0.6u
+X3 x xb vss vss nfet_03v3 ad=0.72p pd=3.6u as=0.72p ps=3.6u w=1.2u l=0.6u
+X4 qb y vss vss nfet_06v0 ad=1.08p pd=4.8u as=1.08p ps=4.8u w=1.8u l=0.6u
+X5 vss xb y vss nfet_06v0 ad=1.08p pd=4.8u as=0.54p ps=2.4u w=1.8u l=0.6u
+X6 yb x vss vss nfet_06v0 ad=0.54p pd=2.4u as=1.08p ps=4.8u w=1.8u l=0.6u
+X7 a_2880_2040# x vddhi vddhi pfet_06v0 ad=0.54p pd=2.4u as=1.08p ps=4.8u w=1.8u l=0.6u
+X8 yb y a_3360_2040# vddhi pfet_06v0 ad=1.08p pd=4.8u as=0.54p ps=2.4u w=1.8u l=0.6u
+X9 vss x yb vss nfet_06v0 ad=1.08p pd=4.8u as=0.54p ps=2.4u w=1.8u l=0.6u
+X10 q yb vss vss nfet_06v0 ad=1.08p pd=4.8u as=1.08p ps=4.8u w=1.8u l=0.6u
+X11 xb a vddlo vddlo pfet_03v3 ad=1.08p pd=4.8u as=1.08p ps=4.8u w=1.8u l=0.6u
+X12 qb y vddhi vddhi pfet_06v0 ad=1.08p pd=4.8u as=1.08p ps=4.8u w=1.8u l=0.6u
+X13 vss x yb vss nfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=1.8u l=0.6u
+X14 a_2160_2040# xb a_1920_2040# vddhi pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=1.8u l=0.6u
+X15 vss xb y vss nfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=1.8u l=0.6u
+X16 a_3120_2040# x a_2880_2040# vddhi pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=1.8u l=0.6u
+X17 q yb vddhi vddhi pfet_06v0 ad=1.08p pd=4.8u as=1.08p ps=4.8u w=1.8u l=0.6u
+X18 y xb vss vss nfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=1.8u l=0.6u
+X19 x xb vddlo vddlo pfet_03v3 ad=1.08p pd=4.8u as=1.08p ps=4.8u w=1.8u l=0.6u
+X20 a_1680_2040# yb vddhi vddhi pfet_06v0 ad=0.54p pd=2.4u as=1.08p ps=4.8u w=1.8u l=0.6u
+X21 y xb a_2160_2040# vddhi pfet_06v0 ad=1.08p pd=4.8u as=0.54p ps=2.4u w=1.8u l=0.6u
+X22 a_1920_2040# yb a_1680_2040# vddhi pfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=1.8u l=0.6u
+X23 yb x vss vss nfet_06v0 ad=0.54p pd=2.4u as=0.54p ps=2.4u w=1.8u l=0.6u
+C0 y vddhi 1.26349f
+C1 yb vddhi 1.22629f
+C2 qb vss 2.1771f
+C3 q vss 3.26484f
+C4 vddhi vss 9.82241f
+C5 vddlo vss 3.37275f
+C6 a_3360_2040# vss 1.31859f
+C7 a_3120_2040# vss 1.31859f
+.ends
+
+.subckt lpopamp_slice inm inp o avdd avss en vsub zpm znm bnb w_220_220#
+X0 avdd en a_1800_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1 ypm zpp a_48840_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X2 xn bna a_28680_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X3 o znm a_59880_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X4 ypp zpp a_33480_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X5 znp znp a_38760_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X6 ypp zpp zpp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X7 a_23640_2760# znp a_23400_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X8 a_61320_1080# znm o avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X9 a_24840_1080# znp a_24600_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X10 o znm a_58920_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X11 a_45000_8160# zpp avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X12 a_27480_9840# zpp a_27240_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X13 ypm zpp zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X14 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X15 o zpm avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X16 avdd bpa a_9480_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X17 a_28680_8160# zpp a_28440_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X18 a_20760_1080# znp a_20520_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X19 o znm a_60840_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X20 a_48840_2760# znp a_48600_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X21 a_53640_9840# zpp avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X22 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X23 a_18600_2760# bna a_18360_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X24 znm znp a_56040_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X25 a_23400_9840# bpa avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X26 ynm znp a_49800_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X27 a_19800_1080# znp a_19560_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X28 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X29 xp1 inp ynm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X30 ypm zpp zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X31 zpp bnb a_44520_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X32 a_37320_9840# bpa a_36600_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X33 bnb bnb a_8040_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X34 a_52200_1080# bnb zpm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X35 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X36 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X37 a_45960_1080# bnb zpp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X38 a_38520_8160# bpa a_38280_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X39 zpm bpb znm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X40 enb en a_1320_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X41 a_48600_9840# zpp a_48360_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X42 a_28440_2760# bna a_28200_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X43 a_4200_1080# bna avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X44 a_40680_2760# znp a_40440_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X45 a_33240_9840# zpp a_33000_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X46 a_2760_8160# enb bpa avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X47 zpm zpp ypm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X48 a_41880_1080# bna a_41640_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X49 a_29640_1080# inm ypp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X50 a_34440_8160# zpp a_34200_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X51 a_24360_2760# znp a_24120_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X52 a_22920_9840# bpa a_22680_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X53 a_25560_1080# znp a_25320_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X54 a_58440_9840# zpp a_58200_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X55 a_15600_8110# a_15600_8110# a_17880_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X56 a_30360_8160# zpp a_30120_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X57 a_20280_2760# znp a_20040_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X58 znm znp a_50280_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X59 a_28200_9840# zpp ypp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X60 a_14040_2760# bna a_13800_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X61 a_51720_1080# bnb znm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X62 a_29400_8160# zpp a_29160_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X63 avdd zpm o avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X64 bna enb a_2280_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X65 a_21480_1080# znp ynp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X66 a_61800_2760# znm avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X67 a_49560_2760# znp a_49320_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X68 ypm zpp a_54120_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X69 a_17880_9840# a_15600_8110# a_15600_8110# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X70 znm enb a_62760_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X71 a_3720_1080# enb bna avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X72 zpm bpb znm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X73 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X74 a_30120_2760# inp xn avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X75 a_45480_2760# bnb a_43320_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X76 zpm bpb znm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X77 a_15600_8110# a_15600_8110# a_18840_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X78 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X79 a_44040_9840# zpp ypp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X80 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X81 a_46680_1080# bna a_46440_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X82 znp bpb a_39000_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X83 znm bpb zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X84 ypm inp a_31080_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X85 a_2280_9840# en avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X86 a_29160_2760# inm xn avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X87 avss znp a_41160_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X88 a_15000_8160# bpa a_14760_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X89 a_27720_9840# zpp a_27480_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X90 bpa enb a_3240_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X91 a_42600_1080# bna a_42360_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X92 a_35160_8160# bpa a_34920_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X93 znm bnb a_55080_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X94 avdd zpm o avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X95 avdd zpp a_28680_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X96 a_18840_2760# bna a_18600_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X97 a_39000_8160# bpa a_38760_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X98 a_31080_2760# inp xn avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X99 a_56520_1080# znp znm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X100 a_23640_9840# bpa a_23400_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X101 o zpm avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X102 bnb bnb a_7080_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X103 a_26280_1080# znp a_26040_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X104 avdd zpm o avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X105 a_20040_1080# znp a_19800_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X106 a_51240_2760# znp ynm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X107 ynm inp xp1 avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X108 a_8520_1080# bnb bnb avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X109 a_14760_2760# bna a_14520_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X110 a_3240_2760# en bna_ avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X111 znm bnb a_52200_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X112 a_22200_1080# znp a_21960_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X113 a_15960_1080# bna a_15720_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X114 xp0 inm ynp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X115 a_15600_8110# a_15600_8110# a_18360_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X116 a_48840_9840# zpp a_48600_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X117 avdd zpm o avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X118 bna_ bnb a_10440_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X119 a_4440_1080# bna a_4200_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X120 a_40920_2760# znp a_40680_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X121 znm bpb zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X122 a_36120_1080# znp a_35880_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X123 znm bpb zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X124 a_43320_1080# bnb a_45960_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X125 a_19800_8160# bpa a_19560_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X126 a_11880_1080# bnb bna_ avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X127 a_39960_2760# znp a_39720_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X128 avdd zpp a_44520_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X129 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X130 a_47400_1080# bna a_47160_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X131 zpm zpp ypm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X132 zpp zpp ypp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X133 a_35880_2760# znp a_35640_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X134 a_20520_2760# znp a_20280_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X135 a_28440_9840# zpp a_28200_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X136 a_40680_9840# bpa a_39960_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X137 a_4200_8160# bpa avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X138 znp znp a_36840_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X139 a_29640_8160# zpp a_29400_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X140 a_41880_8160# zpp a_41640_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X141 a_21720_1080# znp a_21480_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X142 o znm a_61800_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X143 a_19560_2760# znp avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X144 xn inp a_31560_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X145 ynm inp xp1 avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X146 a_57240_1080# znp a_57000_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X147 a_33000_1080# bna xn avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X148 xp1 inm ynp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X149 avss bna a_15240_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X150 bnb bnb a_9000_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X151 zpp bnb a_45480_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X152 xp0 bpa a_20040_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X153 znm bpb zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X154 a_53160_1080# bnb zpm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X155 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X156 a_46920_1080# bna a_46680_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X157 zpm bpb znm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X158 a_16680_1080# bna a_16440_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X159 a_57000_2760# znp ynm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X160 bpa en a_2280_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X161 ypm zpp zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X162 o zpm avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X163 ynm inp xp0 avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X164 a_11400_2760# bnb bnb avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X165 a_5160_1080# bna a_4920_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X166 a_41640_2760# bna avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X167 a_3720_8160# en bpa avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X168 a_9000_2760# bnb bna_ avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X169 a_42840_1080# bna a_42600_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X170 zpm en a_62760_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X171 bna_ bnb a_12360_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X172 a_25320_2760# znp ynm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X173 a_30120_9840# zpp ypm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X174 a_45480_9840# zpp a_45240_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X175 ypp zpp zpp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X176 a_26520_1080# znp a_26280_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X177 a_31320_8160# zpp a_31080_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X178 ynp znp a_21000_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X179 ynp znp a_36360_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X180 a_29160_9840# zpp avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X181 avdd bpa a_41160_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X182 a_37800_1080# znp ynp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X183 zpp zpp ypp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X184 a_22440_1080# znp a_22200_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X185 a_62760_2760# enb avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X186 znm bpb zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X187 a_18840_9840# a_15600_8110# a_15600_8110# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X188 a_31080_9840# zpp avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X189 a_10920_2760# bnb bna_ avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X190 zpm bpb znm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X191 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X192 a_26280_8160# bpa xp1 avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X193 a_16200_2760# bna a_15960_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X194 a_46440_2760# bna a_43320_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X195 zpm bpb znm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X196 a_20040_8160# bpa a_19800_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X197 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X198 a_47640_1080# bna a_47400_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X199 a_14760_9840# bpa bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X200 ypm zpp zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X201 bpb bna a_17160_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X202 a_3240_9840# enb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X203 xp0 inp ynm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X204 a_42360_2760# bna a_42120_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X205 a_15960_8160# a_15600_8110# a_15600_8110# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X206 a_40920_9840# bpa a_40680_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X207 bpa_ bpa a_10440_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X208 a_4440_8160# bpa a_4200_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X209 a_43560_1080# bnb a_43320_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X210 a_35640_8160# bpb znp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X211 ypp zpp zpp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X212 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X213 a_39960_8160# bpb znp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X214 a_32040_2760# inm xn avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X215 a_47400_8160# zpp ypp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X216 a_27240_1080# bna avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X217 znp bpb a_35640_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X218 a_15720_2760# bna avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X219 ynp inm xp0 avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X220 avss znp a_22920_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X221 a_16920_1080# bna a_16680_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X222 avss enb a_63240_2760# avss nfet_06v0 ad=3.96p pd=14.4u as=1.98p ps=7.2u w=6.6u l=0.6u
+X223 a_36600_8160# bpb znp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X224 avdd zpm o avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X225 xp0 inp ynm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X226 bna_ bnb a_11400_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X227 avss znp a_26760_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X228 a_19560_9840# bpa avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X229 ypm zpp a_31560_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X230 ypm zpp zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X231 a_47160_2760# bna a_46920_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X232 a_33000_8160# zpp avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X233 a_12840_1080# bnb bna_ avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X234 ypp zpp a_45480_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X235 a_1320_1080# en avss avss nfet_06v0 ad=1.98p pd=7.2u as=3.96p ps=14.4u w=6.6u l=0.6u
+X236 avdd bpa a_15240_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X237 a_9240_8160# bpa a_9000_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X238 a_48360_1080# znp avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X239 avss znm a_60360_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X240 a_53160_8160# zpp a_52920_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X241 a_15600_8110# a_15600_8110# a_16440_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X242 zpp zpp ypp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X243 zpm bpb znm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X244 a_36840_2760# znp ynp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X245 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X246 a_41640_9840# zpp avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X247 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X248 a_43320_1080# bnb a_44040_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X249 znp znp a_37800_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X250 a_9000_9840# bpa bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X251 ypp zpp zpp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X252 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X253 xn inm a_32520_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X254 ynp inm xp1 avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X255 a_40200_1080# znp a_39960_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X256 a_33960_1080# bna a_33720_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X257 a_26520_8160# bpa a_26280_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X258 a_16440_2760# bna a_16200_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X259 xp0 inm ynp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X260 a_36600_8160# bpb znp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X261 a_54120_1080# bnb zpm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X262 a_37800_8160# bpa a_37560_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X263 a_17640_1080# bna bpb avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X264 a_57960_2760# znp a_57720_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X265 a_62760_9840# en avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X266 a_22440_8160# bpa xp0 avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X267 a_6120_1080# bnb bna_ avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X268 a_12360_2760# bnb bnb avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X269 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X270 a_9960_2760# bnb bna_ avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X271 bna_ bnb a_13320_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X272 zpm bnb a_53640_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X273 a_15600_8110# a_15600_8110# a_15960_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X274 zpp zpp ypp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X275 a_55080_1080# bnb zpm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X276 a_47640_8160# zpp a_47400_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X277 bna_ bna a_5640_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X278 a_17400_8160# a_15600_8110# a_15600_8110# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X279 ynp znp a_37320_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X280 ypp zpp a_42120_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X281 a_7080_1080# bnb bna_ avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X282 ynm znp a_50760_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X283 a_38760_1080# znp ynp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X284 a_1800_2760# en enb avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X285 zpp zpp ypp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X286 a_33480_2760# bna a_33240_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X287 bna_ en a_2760_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X288 a_32040_9840# zpp ypm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X289 avss bna a_34440_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X290 a_27240_8160# zpp avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X291 a_17160_2760# bna a_16920_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X292 a_15600_8110# a_15600_8110# avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X293 a_60840_1080# znm avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X294 a_30600_1080# inp ypm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X295 a_18360_1080# bna a_18120_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X296 avdd bpa a_22920_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X297 avss znp a_58440_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X298 a_43320_1080# bna a_43080_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X299 avdd en a_63240_9840# avdd pfet_06v0 ad=3.96p pd=14.4u as=1.98p ps=7.2u w=6.6u l=0.6u
+X300 a_16920_8160# a_15600_8110# a_15600_8110# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X301 avdd bpa a_26760_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X302 a_59880_1080# znm avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X303 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X304 a_44520_1080# bnb a_43320_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X305 a_14280_1080# bna a_14040_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X306 a_54600_2760# bnb znm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X307 ypp zpp zpp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X308 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X309 ynm znp a_55560_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X310 a_1320_8160# en avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=3.96p ps=14.4u w=6.6u l=0.6u
+X311 a_48360_8160# zpp avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X312 a_6600_2760# bnb bnb avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X313 a_40440_1080# znp a_40200_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X314 avdd zpm o avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X315 bnb bnb a_9960_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X316 a_38280_2760# znp znp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X317 bna_ bnb a_7560_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X318 znp bpb a_36600_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X319 ynp znp a_39240_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X320 a_24120_1080# znp a_23880_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X321 a_44280_8160# zpp a_44040_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X322 avdd bpa a_37800_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X323 a_34200_2760# bna a_33960_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X324 a_27960_2760# bna a_27720_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X325 avdd zpp a_32520_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X326 a_35400_1080# znp a_35160_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X327 znp bpb a_39960_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X328 a_60360_2760# znm o avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X329 avss bna a_47880_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X330 a_33960_8160# zpp ypp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X331 a_23880_2760# znp a_23640_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X332 a_16440_9840# a_15600_8110# a_15600_8110# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X333 a_49320_1080# znp a_49080_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X334 avss znm a_61320_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X335 a_54120_8160# zpp a_53880_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X336 a_59400_2760# znm o avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X337 ynm znp a_24840_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X338 a_57960_9840# zpp ypm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X339 a_15600_8110# a_15600_8110# a_17400_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X340 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X341 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X342 a_43320_1080# bnb a_45000_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X343 a_9960_9840# bpa avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X344 avss en a_1800_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X345 a_21000_1080# znp a_20760_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X346 a_49080_2760# znp a_48840_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X347 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X348 a_33720_2760# bna a_33480_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X349 a_53880_9840# zpp a_53640_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X350 a_41160_1080# znp a_40920_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X351 zpm zpp ypm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X352 a_34920_1080# znp avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X353 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X354 a_45000_2760# bnb zpp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X355 a_37560_9840# bpa a_37320_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X356 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X357 a_38760_8160# bpa a_38520_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X358 znm bpb zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X359 xn inp a_30600_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X360 a_1800_9840# en enb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X361 a_28680_2760# bna a_28440_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X362 a_58920_2760# znm avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X363 a_33480_9840# zpp a_33240_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X364 a_13320_2760# bnb bnb avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X365 bpa_ enb a_2760_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X366 xn inm a_29640_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X367 a_14520_1080# bna a_14280_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X368 avdd zpp a_34440_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X369 a_24600_2760# znp a_24360_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X370 zpm bnb a_54600_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X371 a_15600_8110# a_15600_8110# a_16920_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X372 a_62280_1080# znm o avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X373 a_56040_1080# znp ynm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X374 o zpm avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X375 bna_ bnb a_6600_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X376 a_25800_1080# znp a_25560_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X377 avdd zpp a_58440_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X378 a_18360_8160# a_15600_8110# a_15600_8110# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X379 a_30600_8160# zpp a_30360_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X380 a_10440_1080# bnb bnb avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X381 a_50760_2760# znp znm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X382 ynp znp a_38280_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X383 ypp zpp zpp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X384 a_8040_1080# bnb bna_ avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X385 o zpm avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X386 a_2760_2760# en bna avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X387 zpm bnb a_51720_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X388 a_39720_1080# znp ynp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X389 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X390 a_44520_8160# zpp a_44280_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X391 a_49800_2760# znp a_49560_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X392 a_34440_2760# bna a_34200_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X393 zpm zpp ypm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X394 avss enb a_3720_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X395 znm bpb zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X396 a_35640_1080# znp a_35400_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X397 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X398 a_39960_8160# bpb znp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X399 a_38280_9840# bpa avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X400 a_10200_8160# bpa a_9960_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X401 a_18120_2760# bna a_17880_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X402 ypm inp a_30120_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X403 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X404 a_31560_1080# inp ypm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X405 avss bna a_19080_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X406 xp1 bpa a_23880_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X407 a_39000_8160# bpb znp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X408 ypp inm a_29160_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X409 avss znm a_59400_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X410 a_34200_9840# zpp a_33960_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X411 ypp zpp a_27720_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X412 a_35400_8160# bpa a_35160_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X413 a_15240_1080# bna a_15000_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X414 a_55560_2760# znp znm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X415 avdd zpp a_47880_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X416 o zpm avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X417 a_19080_2760# bna a_18840_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X418 a_23880_9840# bpa a_23640_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X419 a_7560_2760# bnb bnb avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X420 ynm znp a_56520_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X421 zpm zpp ypm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X422 avdd zpm o avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X423 bnb bnb a_10920_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X424 znm znp a_51240_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X425 a_39240_2760# znp znp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X426 o zpm avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X427 xp1 inp ynm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X428 a_15000_2760# bna a_14760_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X429 bna_ bnb a_8520_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X430 a_52680_1080# bnb znm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X431 a_45240_8160# zpp a_45000_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X432 bna en a_3240_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X433 a_35160_2760# znp a_34920_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X434 avdd en a_1800_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X435 ypm zpp a_48840_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X436 ynp inm xp0 avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X437 xn bna a_28680_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X438 a_4680_1080# bna a_4440_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X439 ypp zpp a_33480_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X440 a_36360_1080# znp a_36120_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X441 a_41160_8160# bpa a_40920_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X442 a_61320_2760# znm o avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X443 a_34920_8160# bpa avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X444 a_24840_2760# znp a_24600_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X445 a_45000_9840# zpp avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X446 avss znm a_62280_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X447 ypp inm a_32040_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X448 a_26040_1080# znp a_25800_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X449 o zpm avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X450 avdd zpp a_30600_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X451 a_28680_9840# zpp a_28440_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X452 a_20760_2760# znp a_20520_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X453 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X454 znm znp a_56040_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X455 ypm zpp a_29640_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X456 a_21960_1080# znp a_21720_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X457 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X458 a_19800_2760# znp a_19560_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X459 ynm znp a_49800_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X460 xp1 inp ynm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X461 ypm zpp zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X462 a_57480_1080# znp a_57240_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X463 o zpm avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X464 bnb bnb a_8040_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X465 a_42120_1080# bna a_41880_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X466 zpm bpb znm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X467 a_52200_2760# bnb zpm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X468 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X469 a_10440_8160# bpa a_10200_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X470 ynp inm xp1 avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X471 a_9480_1080# bnb bnb avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X472 a_45960_2760# bnb zpp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X473 a_38520_9840# bpa a_38280_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X474 zpm bpb znm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X475 znm bnb a_53160_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X476 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X477 a_4200_2760# bna avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X478 znp bpb a_39000_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X479 a_2760_9840# enb bpa avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X480 ypm zpp zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X481 a_29640_2760# inm ypp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X482 a_41880_2760# bna a_41640_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X483 a_34440_9840# zpp a_34200_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X484 zpm zpp ypm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X485 a_5400_1080# bna a_5160_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X486 avdd en a_3720_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X487 a_43080_1080# bna a_42840_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X488 a_35640_8160# bpa a_35400_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X489 a_25560_2760# znp a_25320_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X490 a_63240_1080# enb znm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X491 a_15600_8110# a_15600_8110# a_17880_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X492 a_30360_9840# zpp a_30120_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X493 a_26760_1080# znp a_26520_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X494 avdd a_15600_8110# a_15600_8110# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X495 a_31560_8160# zpp a_31320_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X496 a_51720_2760# bnb znm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X497 a_29400_9840# zpp a_29160_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X498 avdd zpm o avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X499 a_21480_2760# znp ynp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X500 zpm bnb a_52680_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X501 a_22680_1080# znp a_22440_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X502 a_15240_8160# bpa a_15000_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X503 a_3720_2760# enb bna avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X504 znm enb a_62760_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X505 zpm bpb znm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X506 a_58200_1080# znp a_57960_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X507 a_4920_1080# bna a_4680_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X508 a_15600_8110# a_15600_8110# a_18840_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X509 znm bpb zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X510 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X511 a_46680_2760# bna a_46440_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X512 znp bpb a_39000_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X513 znm bpb zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X514 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X515 ypm inp a_31080_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X516 a_15000_9840# bpa a_14760_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X517 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X518 a_47880_1080# bna a_47640_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X519 a_32520_1080# inm ypp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X520 a_52680_8160# zpp ypm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X521 bpa enb a_3240_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X522 a_42600_2760# bna a_42360_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X523 a_35160_9840# bpa a_34920_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X524 avdd zpp a_28680_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X525 a_4680_8160# bpa a_4440_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X526 zpp bnb a_43560_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X527 znp bpb a_35640_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X528 a_56520_2760# znp znm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X529 o zpm avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X530 a_26280_2760# znp a_26040_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X531 a_20040_2760# znp a_19800_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X532 ynm inp xp1 avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X533 a_57720_1080# znp a_57480_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X534 a_27480_1080# bna a_27240_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X535 a_32280_8160# zpp a_32040_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X536 avdd zpm o avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X537 a_8520_2760# bnb bnb avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X538 bnb bnb a_11880_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X539 a_22200_2760# znp a_21960_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X540 znm bnb a_52200_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X541 xp1 inm ynp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X542 a_15960_2760# bna a_15720_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X543 bna_ bnb a_9480_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X544 xp0 inm ynp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X545 a_53640_1080# bnb znm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X546 a_4440_2760# bna a_4200_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X547 a_23400_1080# znp avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X548 znm bpb zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X549 a_36120_2760# znp a_35880_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X550 ynm inp xp0 avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X551 a_5640_1080# bna a_5400_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X552 a_19800_9840# bpa a_19560_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X553 znm bpb zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X554 a_11880_2760# bnb bna_ avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X555 a_37320_1080# znp znp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X556 a_42120_8160# zpp a_41880_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X557 zpm zpp ypm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X558 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X559 bnb bnb a_12840_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X560 a_47400_2760# bna a_47160_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X561 zpm zpp ypm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X562 zpp zpp ypp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X563 a_9480_8160# bpa a_9240_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X564 a_48600_1080# znp a_48360_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X565 enb en a_1320_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X566 avdd zpp a_53160_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X567 a_33240_1080# bna a_33000_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X568 a_4200_9840# bpa avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X569 znp znp a_36840_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X570 a_29640_9840# zpp a_29400_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X571 a_41880_9840# zpp a_41640_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X572 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X573 a_21720_2760# znp a_21480_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X574 a_22920_1080# znp a_22680_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X575 a_57240_2760# znp a_57000_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X576 zpp zpp ypp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X577 a_33000_2760# bna xn avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X578 xp1 inm ynp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X579 a_58440_1080# znp a_58200_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X580 a_63240_8160# en zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X581 bnb bnb a_9000_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X582 a_28200_1080# bna a_27960_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X583 a_53160_2760# bnb zpm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X584 a_26760_8160# bpa a_26520_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X585 a_46920_2760# bna a_46680_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X586 zpm bpb znm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X587 a_16680_2760# bna a_16440_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X588 znm bnb a_54120_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X589 ynm inp xp0 avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X590 a_5160_2760# bna a_4920_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X591 a_17880_1080# bna a_17640_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X592 a_3720_9840# en bpa avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X593 a_22680_8160# bpa a_22440_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X594 a_52920_8160# zpp a_52680_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X595 a_42840_2760# bna a_42600_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X596 zpm en a_62760_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X597 bna_ bnb a_12360_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X598 bnb bnb a_6120_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X599 a_58200_8160# zpp a_57960_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X600 a_50280_1080# znp ynm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X601 bpa_ bpa a_4680_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X602 a_44040_1080# bnb zpp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X603 a_13800_1080# bna bna_ avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X604 ypp zpp zpp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X605 a_26520_2760# znp a_26280_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X606 a_2280_1080# enb avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X607 a_31320_9840# zpp a_31080_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X608 a_27720_1080# bna a_27480_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X609 a_32520_8160# zpp a_32280_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X610 a_47880_8160# zpp a_47640_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X611 a_37800_2760# znp ynp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X612 zpp zpp ypp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X613 a_22440_2760# znp a_22200_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X614 o znm a_59880_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X615 znp znp a_38760_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X616 ypp zpp zpp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X617 a_23640_1080# znp a_23400_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X618 zpm bpb znm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X619 o znm a_58920_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X620 a_26280_9840# bpa xp1 avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X621 a_20040_9840# bpa a_19800_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X622 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X623 a_27480_8160# zpp a_27240_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X624 ypm zpp zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X625 a_47640_2760# bna a_47400_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X626 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X627 bpb bna a_17160_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X628 xp0 inp ynm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X629 ypm zpp zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X630 a_15960_9840# a_15600_8110# a_15600_8110# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X631 avdd bpa a_9480_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X632 a_48840_1080# znp a_48600_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X633 o znm a_60840_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X634 a_18600_1080# bna a_18360_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X635 a_53640_8160# zpp avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X636 a_4440_9840# bpa a_4200_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X637 a_23400_8160# bpa avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X638 a_43560_2760# bnb a_43320_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X639 a_35640_8160# bpb znp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X640 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X641 zpp bnb a_44520_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X642 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X643 a_37320_8160# bpa a_36600_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X644 a_47400_9840# zpp ypp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X645 a_27240_2760# bna avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X646 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X647 enb en a_1320_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X648 a_48600_8160# zpp a_48360_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X649 a_40680_1080# znp a_40440_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X650 a_28440_1080# bna a_28200_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X651 a_33240_8160# zpp a_33000_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X652 avss znp a_22920_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X653 a_36600_8160# bpb znp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X654 a_16920_2760# bna a_16680_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X655 xp0 inp ynm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X656 a_24360_1080# znp a_24120_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X657 ypm zpp zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X658 a_22920_8160# bpa a_22680_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X659 a_33000_9840# zpp avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X660 a_12840_2760# bnb bna_ avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X661 a_28200_8160# zpp ypp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X662 a_58440_8160# zpp a_58200_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X663 a_1320_2760# en avss avss nfet_06v0 ad=1.98p pd=7.2u as=3.96p ps=14.4u w=6.6u l=0.6u
+X664 znm znp a_50280_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X665 a_20280_1080# znp a_20040_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X666 a_9240_9840# bpa a_9000_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X667 a_14040_1080# bna a_13800_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X668 avss znm a_60360_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X669 a_48360_2760# znp avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X670 a_53160_9840# zpp a_52920_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X671 zpp zpp ypp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X672 a_49560_1080# znp a_49320_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X673 a_61800_1080# znm avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X674 bna enb a_2280_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X675 a_15600_8110# a_15600_8110# a_16440_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X676 ypm zpp a_54120_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X677 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X678 a_43320_1080# bnb a_44040_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X679 a_17880_8160# a_15600_8110# a_15600_8110# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X680 znp znp a_37800_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X681 ypp zpp zpp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X682 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X683 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X684 a_45480_1080# bnb a_43320_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X685 a_30120_1080# inp xn avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X686 zpm bpb znm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X687 a_40200_2760# znp a_39960_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X688 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X689 a_44040_8160# zpp ypp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X690 a_33960_2760# bna a_33720_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X691 a_26520_9840# bpa a_26280_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X692 a_2280_8160# en avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X693 avss znp a_41160_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X694 a_29160_1080# inm xn avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X695 a_54120_2760# bnb zpm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X696 a_27720_8160# zpp a_27480_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X697 a_37800_9840# bpa a_37560_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X698 a_17640_2760# bna bpb avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X699 a_22440_9840# bpa xp0 avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X700 a_6120_2760# bnb bna_ avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X701 znm bnb a_55080_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X702 avdd zpm o avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X703 a_31080_1080# inp xn avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X704 a_18840_1080# bna a_18600_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X705 a_23640_8160# bpa a_23400_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X706 a_39000_8160# bpa a_38760_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X707 bna_ bnb a_13320_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X708 bnb bnb a_7080_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X709 avdd zpm o avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X710 a_51240_1080# znp ynm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X711 a_14760_1080# bna a_14520_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X712 a_55080_2760# bnb zpm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X713 a_47640_9840# zpp a_47400_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X714 a_3240_1080# en bna_ avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X715 a_17400_9840# a_15600_8110# a_15600_8110# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X716 a_40920_1080# znp a_40680_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X717 a_15600_8110# a_15600_8110# a_18360_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X718 a_48840_8160# zpp a_48600_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X719 avdd zpm o avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X720 a_7080_2760# bnb bna_ avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X721 bna_ bnb a_10440_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X722 ynm znp a_50760_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X723 a_38760_2760# znp ynp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X724 zpp zpp ypp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X725 a_43320_1080# bnb a_45960_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X726 a_39960_1080# znp a_39720_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X727 avdd zpp a_44520_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X728 bna_ en a_2760_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X729 avss bna a_34440_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X730 a_27240_9840# zpp avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X731 a_35880_1080# znp a_35640_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X732 a_28440_8160# zpp a_28200_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X733 a_40680_8160# bpa a_39960_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X734 a_20520_1080# znp a_20280_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X735 a_18360_2760# bna a_18120_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X736 a_30600_2760# inp ypm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X737 a_60840_2760# znm avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X738 avdd bpa a_22920_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X739 a_16920_9840# a_15600_8110# a_15600_8110# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X740 o znm a_61800_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X741 xn inp a_31560_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X742 a_19560_1080# znp avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X743 a_59880_2760# znm avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X744 ynm inp xp1 avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X745 a_14280_2760# bna a_14040_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X746 a_44520_2760# bnb a_43320_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X747 zpp bnb a_45480_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X748 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X749 avss bna a_15240_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X750 a_1320_9840# en avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=3.96p ps=14.4u w=6.6u l=0.6u
+X751 xp0 bpa a_20040_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X752 znm bpb zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X753 ynm znp a_55560_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X754 a_40440_2760# znp a_40200_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X755 a_48360_9840# zpp avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X756 avdd zpm o avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X757 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X758 bnb bnb a_9960_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X759 a_57000_1080# znp ynm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X760 bpa en a_2280_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X761 ypm zpp zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X762 o zpm avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X763 bna_ bnb a_7560_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X764 a_41640_1080# bna avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X765 a_11400_1080# bnb bnb avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X766 ynp znp a_39240_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X767 a_44280_9840# zpp a_44040_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X768 a_24120_2760# znp a_23880_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X769 a_9000_1080# bnb bna_ avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X770 avdd bpa a_37800_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X771 a_45480_8160# zpp a_45240_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X772 a_25320_1080# znp ynm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X773 a_30120_8160# zpp ypm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X774 a_35400_2760# znp a_35160_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X775 znp bpb a_39960_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X776 a_33960_9840# zpp ypp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X777 ynp znp a_36360_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X778 ynp znp a_21000_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X779 a_29160_8160# zpp avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X780 avdd bpa a_41160_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X781 avss znm a_61320_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X782 a_49320_2760# znp a_49080_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X783 a_54120_9840# zpp a_53880_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X784 ynm znp a_24840_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X785 a_62760_1080# enb avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X786 a_15600_8110# a_15600_8110# a_17400_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X787 znm bpb zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X788 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X789 a_43320_1080# bnb a_45000_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X790 a_18840_8160# a_15600_8110# a_15600_8110# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X791 a_31080_8160# zpp avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X792 a_10920_1080# bnb bna_ avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X793 a_21000_2760# znp a_20760_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X794 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X795 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X796 a_46440_1080# bna a_43320_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X797 a_16200_1080# bna a_15960_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X798 zpm bpb znm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X799 a_41160_2760# znp a_40920_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X800 zpm zpp ypm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X801 a_14760_8160# bpa bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X802 a_34920_2760# znp avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X803 a_3240_8160# enb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X804 a_42360_1080# bna a_42120_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X805 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X806 a_40920_8160# bpa a_40680_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X807 a_38760_9840# bpa a_38520_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X808 znm bpb zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X809 bpa_ bpa a_10440_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X810 xn inp a_30600_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X811 ypp zpp zpp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X812 a_39960_8160# bpb znp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X813 a_32040_1080# inm xn avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X814 bpa_ enb a_2760_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X815 a_14520_2760# bna a_14280_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X816 xn inm a_29640_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X817 avdd zpp a_34440_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X818 a_62280_2760# znm o avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X819 znp bpb a_35640_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X820 a_15720_1080# bna avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X821 a_56040_2760# znp ynm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X822 ynp inm xp0 avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X823 a_25800_2760# znp a_25560_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X824 a_18360_9840# a_15600_8110# a_15600_8110# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X825 a_30600_9840# zpp a_30360_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X826 o zpm avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X827 a_10440_2760# bnb bnb avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X828 avss enb a_63240_1080# avss nfet_06v0 ad=3.96p pd=14.4u as=1.98p ps=7.2u w=6.6u l=0.6u
+X829 avss znp a_26760_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X830 avdd zpm o avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X831 a_8040_2760# bnb bna_ avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X832 bna_ bnb a_11400_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X833 o zpm avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X834 a_19560_8160# bpa avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X835 ypm zpp a_31560_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X836 zpm bnb a_51720_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X837 a_39720_2760# znp ynp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X838 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X839 a_44520_9840# zpp a_44280_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X840 a_47160_1080# bna a_46920_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X841 ypp zpp a_45480_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X842 avss enb a_3720_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X843 znm bpb zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X844 avdd bpa a_15240_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X845 a_35640_2760# znp a_35400_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X846 a_39960_8160# bpb znp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X847 a_10200_9840# bpa a_9960_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X848 zpm bpb znm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X849 a_36840_1080# znp ynp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X850 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X851 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X852 a_41640_8160# zpp avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X853 avss bna a_19080_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X854 a_31560_2760# inp ypm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X855 xp1 bpa a_23880_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X856 a_39000_8160# bpb znp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X857 a_9000_8160# bpa bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X858 xn inm a_32520_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X859 ynp inm xp1 avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X860 a_35400_9840# bpa a_35160_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X861 a_15240_2760# bna a_15000_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X862 a_16440_1080# bna a_16200_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X863 xp0 inm ynp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X864 a_36600_8160# bpb znp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X865 ynm znp a_56520_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X866 zpm zpp ypm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X867 avdd zpm o avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X868 bnb bnb a_10920_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X869 a_57960_1080# znp a_57720_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X870 xp1 inp ynm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X871 a_62760_8160# en avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X872 bna_ bnb a_8520_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X873 a_12360_1080# bnb bnb avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X874 a_52680_2760# bnb znm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X875 a_45240_9840# zpp a_45000_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X876 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X877 a_9960_1080# bnb bna_ avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X878 ynp inm xp0 avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X879 a_4680_2760# bna a_4440_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X880 zpm bnb a_53640_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X881 a_15600_8110# a_15600_8110# a_15960_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X882 zpp zpp ypp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X883 a_36360_2760# znp a_36120_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X884 a_41160_9840# bpa a_40920_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X885 bna_ bna a_5640_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X886 a_34920_9840# bpa avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X887 ynp znp a_37320_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X888 ypp zpp a_42120_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X889 avss znm a_62280_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X890 ypp inm a_32040_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X891 a_26040_2760# znp a_25800_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X892 a_1800_1080# en enb avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X893 avdd zpp a_30600_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X894 a_33480_1080# bna a_33240_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X895 a_32040_8160# zpp ypm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X896 a_21960_2760# znp a_21720_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X897 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X898 ypm zpp a_29640_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X899 a_17160_1080# bna a_16920_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X900 a_57480_2760# znp a_57240_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X901 o zpm avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X902 a_42120_2760# bna a_41880_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X903 zpm bpb znm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X904 a_15600_8110# a_15600_8110# avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X905 ynp inm xp1 avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X906 a_9480_2760# bnb bnb avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X907 a_43320_1080# bna a_43080_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X908 avss znp a_58440_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X909 a_10440_9840# bpa a_10200_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X910 avdd en a_63240_8160# avdd pfet_06v0 ad=3.96p pd=14.4u as=1.98p ps=7.2u w=6.6u l=0.6u
+X911 znm bnb a_53160_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X912 avdd bpa a_26760_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X913 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X914 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X915 znp bpb a_39000_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X916 ypm zpp zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X917 a_54600_1080# bnb znm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X918 ypp zpp zpp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X919 a_5400_2760# bna a_5160_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X920 avdd en a_3720_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X921 a_6600_1080# bnb bnb avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X922 a_43080_2760# bna a_42840_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X923 a_35640_8160# bpa a_35400_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X924 a_38280_1080# znp znp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X925 a_63240_2760# enb znm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X926 znp bpb a_36600_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X927 a_26760_2760# znp a_26520_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X928 avdd a_15600_8110# a_15600_8110# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X929 a_31560_9840# zpp a_31320_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X930 a_34200_1080# bna a_33960_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X931 a_27960_1080# bna a_27720_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X932 avdd zpp a_32520_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X933 zpm bnb a_52680_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X934 a_22680_2760# znp a_22440_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X935 avss bna a_47880_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X936 a_60360_1080# znm o avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X937 a_15240_9840# bpa a_15000_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X938 a_58200_2760# znp a_57960_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X939 a_4920_2760# bna a_4680_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X940 a_23880_1080# znp a_23640_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X941 a_16440_8160# a_15600_8110# a_15600_8110# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X942 znm bpb zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X943 a_59400_1080# znm o avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X944 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X945 a_57960_8160# zpp ypm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X946 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X947 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X948 a_47880_2760# bna a_47640_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X949 a_52680_9840# zpp ypm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X950 a_32520_2760# inm ypp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X951 a_9960_8160# bpa avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X952 a_49080_1080# znp a_48840_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X953 avss en a_1800_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X954 a_53880_8160# zpp a_53640_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X955 a_33720_1080# bna a_33480_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X956 a_4680_9840# bpa a_4440_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X957 zpp bnb a_43560_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X958 znp bpb a_35640_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X959 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X960 a_45000_1080# bnb zpp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X961 a_37560_8160# bpa a_37320_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X962 a_27480_2760# bna a_27240_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X963 a_57720_2760# znp a_57480_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X964 avdd zpm o avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X965 bnb bnb a_11880_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X966 a_32280_9840# zpp a_32040_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X967 a_58920_1080# znm avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X968 xp1 inm ynp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X969 a_1800_8160# en enb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X970 bna_ bnb a_9480_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X971 a_28680_1080# bna a_28440_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X972 a_33480_8160# zpp a_33240_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X973 a_13320_1080# bnb bnb avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X974 a_53640_2760# bnb znm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X975 a_23400_2760# znp avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X976 ynm inp xp0 avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X977 zpm bnb a_54600_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X978 a_24600_1080# znp a_24360_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X979 a_15600_8110# a_15600_8110# a_16920_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X980 a_5640_2760# bna a_5400_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X981 zpm zpp ypm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X982 a_37320_2760# znp znp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X983 a_42120_9840# zpp a_41880_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X984 bnb bnb a_12840_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X985 bna_ bnb a_6600_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X986 avdd zpp a_58440_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X987 a_50760_1080# znp znm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X988 ynp znp a_38280_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X989 a_9480_9840# bpa a_9240_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X990 ypp zpp zpp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X991 enb en a_1320_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X992 a_48600_2760# znp a_48360_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X993 avdd zpp a_53160_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X994 a_33240_2760# bna a_33000_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X995 a_2760_1080# en bna avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X996 a_49800_1080# znp a_49560_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X997 a_34440_1080# bna a_34200_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X998 bpa_ bpb bpb avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X999 zpm zpp ypm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1000 a_22920_2760# znp a_22680_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1001 zpp zpp ypp avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1002 bpb bpb bpa_ avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1003 a_38280_8160# bpa avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1004 ypm inp a_30120_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1005 a_18120_1080# bna a_17880_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1006 a_58440_2760# znp a_58200_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1007 a_63240_9840# en zpm avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1008 a_28200_2760# bna a_27960_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1009 a_26760_9840# bpa a_26520_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1010 avss znm a_59400_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1011 ypp inm a_29160_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1012 a_34200_8160# zpp a_33960_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1013 znm bnb a_54120_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1014 ypp zpp a_27720_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1015 a_17880_2760# bna a_17640_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1016 a_22680_9840# bpa a_22440_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1017 a_52920_9840# zpp a_52680_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1018 a_55560_1080# znp znm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1019 avdd zpp a_47880_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1020 o zpm avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1021 bnb bnb a_6120_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1022 a_58200_9840# zpp a_57960_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1023 a_19080_1080# bna a_18840_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1024 a_50280_2760# znp ynm avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1025 bpa_ bpa a_4680_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1026 a_23880_8160# bpa a_23640_8160# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1027 a_7560_1080# bnb bnb avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1028 a_44040_2760# bnb zpp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1029 a_13800_2760# bna bna_ avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1030 znm znp a_51240_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1031 a_39240_1080# znp znp avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1032 o zpm avdd avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1033 a_2280_2760# enb avss avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1034 a_15000_1080# bna a_14760_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1035 a_27720_2760# bna a_27480_2760# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1036 a_32520_9840# zpp a_32280_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1037 a_47880_9840# zpp a_47640_9840# avdd pfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1038 bna en a_3240_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+X1039 a_35160_1080# znp a_34920_1080# avss nfet_06v0 ad=1.98p pd=7.2u as=1.98p ps=7.2u w=6.6u l=0.6u
+C0 inp xp0 1.56737f
+C1 inm ynp 5.36401f
+C2 bpb bpa_ 42.3645f
+C3 avdd bpa_ 24.3007f
+C4 avss zpp 4.63854f
+C5 avss xn 5.53409f
+C6 bnb enb 1.95993f
+C7 zpm o 42.5273f
+C8 bpa zpp 1.67045f
+C9 bpb a_15600_8110# 1.19718f
+C10 avdd a_15600_8110# 14.2517f
+C11 ypm zpm 9.05863f
+C12 ypm ypp 1.15122f
+C13 enb znp 7.40656f
+C14 inp ynm 6.43281f
+C15 en bpa_ 1.33939f
+C16 inm xn 3.66741f
+C17 znm bnb 7.94137f
+C18 ynp xp1 2.75095f
+C19 avss a_43320_1080# 4.93627f
+C20 znm znp 5.94734f
+C21 znm ynm 2.72714f
+C22 o ynp 1.37596f
+C23 enb bpa_ 1.44426f
+C24 bnb bna_ 15.3766f
+C25 zpm zpp 4.85362f
+C26 avss bpb 2.44549f
+C27 avdd avss 0.98193p
+C28 zpp ypp 22.214f
+C29 xn ypp 1.10649f
+C30 xp0 ynm 2.75095f
+C31 bpa bpb 9.52617f
+C32 avdd bpa 61.4305f
+C33 bnb znp 9.80187f
+C34 avss en 9.24374f
+C35 avdd inm 14.8498f
+C36 ypm zpp 12.546f
+C37 ynm znp 8.52938f
+C38 ypm xn 1.10649f
+C39 a_35640_8160# znp 1.6227f
+C40 en bpa 2.21044f
+C41 xn bna 1.76544f
+C42 zpm bpb 7.74006f
+C43 avss enb 42.6993f
+C44 avss inp 13.0274f
+C45 avdd zpm 28.9049f
+C46 avdd ypp 25.3815f
+C47 enb bpa 1.4995f
+C48 avdd xp1 4.46656f
+C49 en zpm 2.06895f
+C50 avss znm 33.0436f
+C51 avdd o 31.8666f
+C52 ypm avdd 31.2222f
+C53 a_43320_1080# bna 1.62398f
+C54 avdd ynp 5.22276f
+C55 avss bna_ 17.5835f
+C56 bpb bna 1.42587f
+C57 avdd bna 1.14142f
+C58 bpa xp0 1.48234f
+C59 avss bnb 69.2875f
+C60 en o 1.16256f
+C61 a_43320_1080# zpp 2.53545f
+C62 bpb a_36600_8160# 1.13629f
+C63 avdd a_36600_8160# 1.43138f
+C64 avss znp 76.7963f
+C65 inm xp0 1.56839f
+C66 avss ynm 30.6754f
+C67 bpb zpp 7.77125f
+C68 avdd zpp 80.8802f
+C69 inp xp1 1.56737f
+C70 en bna 1.5757f
+C71 inp o 5.84491f
+C72 zpm znm 15.9761f
+C73 ypm inp 3.30344f
+C74 bpb a_39960_8160# 1.13629f
+C75 avdd a_39960_8160# 1.43712f
+C76 en zpp 6.20059f
+C77 bpb a_39000_8160# 1.13629f
+C78 avdd a_39000_8160# 1.43138f
+C79 enb bna 2.29499f
+C80 bpa bpa_ 4.50883f
+C81 zpm bnb 5.24218f
+C82 znm o 39.9977f
+C83 avdd bpb 74.4033f
+C84 inp xn 3.66829f
+C85 xp0 ynp 2.75095f
+C86 ynm xp1 2.75095f
+C87 bna bna_ 2.95474f
+C88 o ynm 1.23196f
+C89 en bpb 1.96008f
+C90 avdd en 52.0781f
+C91 bnb bna 10.4204f
+C92 ynp znp 10.0172f
+C93 ynp ynm 1.52753f
+C94 znp bna 2.50436f
+C95 bnb zpp 4.8916f
+C96 avdd enb 5.15331f
+C97 avss inm 10.4124f
+C98 avdd inp 12.6091f
+C99 znp a_36600_8160# 1.6227f
+C100 znm bpb 8.04743f
+C101 en enb 5.85198f
+C102 avss zpm 8.59289f
+C103 avdd znm 15.0028f
+C104 znp a_39960_8160# 1.6227f
+C105 avss ypp 1.86535f
+C106 znp a_39000_8160# 1.6227f
+C107 avdd xp0 4.46656f
+C108 bnb a_43320_1080# 4.432f
+C109 avss o 18.4589f
+C110 avdd bnb 1.29848f
+C111 inm zpm 1.13442f
+C112 inm ypp 4.48782f
+C113 bpa xp1 1.48234f
+C114 ypm avss 1.91831f
+C115 bpb znp 5.59f
+C116 avdd znp 5.38398f
+C117 avdd ynm 5.37569f
+C118 avss ynp 19.816f
+C119 en bna_ 1.4299f
+C120 bpb a_35640_8160# 1.13629f
+C121 inm xp1 1.56839f
+C122 avdd a_35640_8160# 1.43674f
+C123 avss bna 70.973f
+C124 znm enb 2.13581f
+C125 inm o 6.9664f
+C126 inp znm 1.70255f
+C127 o vsub 36.154f
+C128 avss vsub 75.4687f
+C129 avdd vsub 0.93256p
+C130 a_29640_1080# vsub 6.4416f
+C131 a_28680_1080# vsub 1.00686f
+C132 a_59880_2760# vsub 6.8825f
+C133 a_44520_2760# vsub 1.11696f
+C134 a_38760_2760# vsub 2.89337f
+C135 xn vsub 1.98293f
+C136 bna_ vsub 1.40194f
+C137 a_48840_8160# vsub 2.52753f
+C138 a_1800_8160# vsub 1.15758f
+C139 ypm vsub 4.64853f
+C140 ypp vsub 8.06285f
+C141 xp1 vsub 5.74578f
+C142 ynm vsub 10.139f
+C143 ynp vsub 4.87139f
+C144 bpa_ vsub 2.11447f
+.ends
+
+.subckt lpopamp inm inp en ib out w_12580_19660# avdd avss SUB w_12580_1300#
+Xlpopamp_slice_0 inm inp out avdd avss en SUB zpm znm ib w_12580_1300# lpopamp_slice
+Xlpopamp_slice_1 inm inp out avdd avss en SUB zpm znm ib w_12580_19660# lpopamp_slice
+X0 znm out cap_mim_2f0_m4m5_noshield c_width=48u c_length=5.4u
+X1 znm out cap_mim_2f0_m4m5_noshield c_width=48u c_length=5.4u
+X2 znm out cap_mim_2f0_m4m5_noshield c_width=48u c_length=5.4u
+X3 zpm out cap_mim_2f0_m4m5_noshield c_width=48u c_length=5.4u
+X4 zpm out cap_mim_2f0_m4m5_noshield c_width=48u c_length=5.4u
+X5 znm out cap_mim_2f0_m4m5_noshield c_width=48u c_length=5.4u
+X6 znm out cap_mim_2f0_m4m5_noshield c_width=48u c_length=5.4u
+X7 zpm out cap_mim_2f0_m4m5_noshield c_width=48u c_length=5.4u
+X8 znm out cap_mim_2f0_m4m5_noshield c_width=48u c_length=5.4u
+X9 zpm out cap_mim_2f0_m4m5_noshield c_width=48u c_length=5.4u
+X10 zpm out cap_mim_2f0_m4m5_noshield c_width=48u c_length=5.4u
+X11 zpm out cap_mim_2f0_m4m5_noshield c_width=48u c_length=5.4u
+X12 znm out cap_mim_2f0_m4m5_noshield c_width=48u c_length=5.4u
+X13 zpm out cap_mim_2f0_m4m5_noshield c_width=48u c_length=5.4u
+X14 zpm out cap_mim_2f0_m4m5_noshield c_width=48u c_length=5.4u
+C0 inp out 1.38923f
+C1 avss znm 1.06851f
+C2 avss zpm 1.02939f
+C3 w_12580_19660# avdd 1.29765f
+C4 znm out 75.30543f
+C5 avss inm 10.24906f
+C6 zpm out 81.28934f
+C7 avss out 26.99505f
+C8 ib avss 10.6242f
+C9 inm out 1.52941f
+C10 ib out 1.27506f
+C11 avss en 9.11499f
+C12 avdd avss 34.97025f
+C13 avdd out 7.83506f
+C14 avss inp 10.16965f
+C15 w_12580_1300# avss 1.30775f
+C16 avss SUB -19.97143f
+C17 avdd SUB 9.00518f
+C18 ib SUB 3.53392f
+C19 out SUB 75.25347f
+C20 inp SUB 1.7609f
+C21 en SUB 1.05492f
+.ends
+
+.subckt slot_6 s6_an[0] s6_an[1] vdd_3v3 vss_5v0 vdd_5v0 vss_3v3 analog_bus3 analog_bus2
++ analog_bus1 analog_bus0 vbias ibias0 ibias1 dig_out[0] dig_out[1] dig_out[2] dig_out[3]
++ dig_out[4] dig_out[5] dig_out[6] dig_out[7] dig_out[8] dig_out[9] dig_out[10] dig_out[11]
++ dig_in[0] dig_in[1] dig_in[2] dig_in[3] dig_in[4] dig_in[5] dig_in[6] dig_in[7]
++ dig_in[8] dig_in[9] dig_in[10] dig_in[11] dig_in[12] dig_in[13] dig_in[14] dig_in[15]
++ dig_in[16] dig_in[17] dig_in[18] dig_in[19] dig_in[20] dig_in[21] dig_in[22] dig_in[23]
++ reset enable clk
+Xlvlshifter_0 enable en enb dvdd avdd vss_3v3 lvlshifter
+Xlpopamp_0 inm inp en ib out w_30700_50380# avdd avss vss_3v3 w_30700_68740# lpopamp
+X0 vss_5v0 avss tm9k r_width=30u r_length=0.6u
+X1 vdd_5v0 avdd tm9k r_width=30u r_length=0.6u
+X2 analog_bus0 inm rm3 r_width=1.8u r_length=0.6u
+X3 analog_bus1 inp rm3 r_width=1.8u r_length=0.6u
+X4 out s6_an[1] rm3 r_width=30u r_length=0.6u
+X5 ibias0 ib rm3 r_width=1.8u r_length=0.6u
+X6 vdd_3v3 dvdd tm9k r_width=3u r_length=0.6u
+C0 avdd ib 3.06824f
+C1 avdd avss 4.76452f
+C2 inp avss 7.6526f
+C3 inm avss 7.6083f
+C4 en avss 1.47027f
+C5 inp avdd 3.00344f
+C6 inm avdd 3.00344f
+C7 en avdd 2.33532f
+C8 avss out 1.44027f
+C9 avss ib 3.80098f
+C10 vdd_3v3 vss_3v3 6.60257f
+C11 vdd_5v0 vss_3v3 6.86254f
+C12 vss_5v0 vss_3v3 2.07581f
+C13 s6_an[0] vss_3v3 4.69069f
+C14 s6_an[1] vss_3v3 4.04412f
+C15 m5_253936_75943# vss_3v3 2.82993f ; **FLOATING
+C16 m3_254536_75943# vss_3v3 2.51176f ; **FLOATING
+C17 avss vss_3v3 -49.00237f
+C18 avdd vss_3v3 62.15077f
+C19 ib vss_3v3 12.34726f
+C20 out vss_3v3 0.29327p
+C21 inp vss_3v3 7.38245f
+C22 inm vss_3v3 5.75767f
+C23 en vss_3v3 15.71432f
+C24 enable vss_3v3 5.28246f
+C25 dvdd vss_3v3 1.82507f
+.ends
+
